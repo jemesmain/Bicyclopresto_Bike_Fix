@@ -23,11 +23,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    // declaration variable
 
-    Button btnSaveProfil;
-    EditText profil_name;
-    SharedPreferences sharedpreferences;
 
 
     @Override
@@ -109,9 +105,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         //SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", 0);
-        SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
+        //SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
         //final EditText profil_name;
-        profil_name = findViewById(R.id.edit_profil_nom);
+        //profil_name = findViewById(R.id.edit_profil_nom);
         // default fragment = fragment home
 
         if (id == R.id.nav_profil) {
@@ -126,7 +122,7 @@ public class MainActivity extends AppCompatActivity
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.fragment, fragment_profil).commit();
             // récupération des informations
-            profil_name.setText(settings.getString("profil_name", "").toString());
+            //profil_name.setText(settings.getString("profil_name", "").toString());
 
         } else if (id == R.id.nav_what) {
             Fragment_what fragment_what = new Fragment_what();

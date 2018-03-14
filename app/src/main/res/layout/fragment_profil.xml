@@ -48,7 +48,7 @@
         android:hint="@string/profil_number"
         android:inputType="phone" />
     <Button
-        android:id="@+id/profil_save"
+        android:id="@+id/btn_profil_save"
         android:layout_marginTop="18dp"
         android:layout_width="@dimen/button_margin"
         android:layout_height="@dimen/button_margin"
