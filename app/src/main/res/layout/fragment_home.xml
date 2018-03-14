@@ -1,0 +1,33 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_home">
+
+    <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:id="@+id/fragment_home_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Commander une réparation
+
+    Coordonnées: édition de votre profil
+    Réparation: descriptif de l'intervention attendue
+    Quand: créneau horaire souhaité
+    Lieu: localisation de votre réparation
+    Réparateur: choix de votre réparateur
+
+ Vous pouvez valider votre commande en cliquant sur le charriot.
+
+ Partage / nous rejoindre
+
+    Partager: partager l'application
+    Nous rejoindre: devenir réparateur
+
+Accueil: vous pouvez revenir à l'accueil (bouton en haut à droite)
+
+        "/>
+
+</FrameLayout>

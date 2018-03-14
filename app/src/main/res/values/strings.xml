@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Bicyclopresto Bike Repair</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Accueil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_home">Hello fragment home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_profil">Veuillez renseigner vos coordonnées</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_what">Hello fragment what</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_when">Hello fragment when</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_where">Hello fragment where</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_fix">Hello fragment fix</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_share">Hello fragment share</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_join">Hello fragment join</string>
+
+
+    <string name="title_activity_maps">Map</string>
+
+    <!-- Contenu de fragment home -->
+    <string name="fragment_home_explication">Commander une réparation Coordonnées: édition de votre profil Réparation</string>
+
+    <!-- Contenu de fragment profil -->
+    <string name="profil_name">prenom nom</string>
+    <string name="profil_email">email</string>
+    <string name="profil_number">numero de telephone</string>
+
+</resources>

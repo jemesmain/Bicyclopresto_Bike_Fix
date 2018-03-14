@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="Commander une réparation"></item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profil"
+            android:icon="@drawable/ic_menu_fingerprint"
+            android:title="Coordonnées" />
+        <item
+            android:id="@+id/nav_what"
+            android:icon="@drawable/ic_menu_motorcycle"
+            android:title="Réparation vélos / fauteuil" />
+        <item
+            android:id="@+id/nav_when"
+            android:icon="@drawable/ic_menu_today"
+            android:title="Quand" />
+        <item
+            android:id="@+id/nav_where"
+            android:icon="@drawable/ic_menu_add_location"
+            android:title="Lieu" />
+        <item
+            android:id="@+id/nav_fix"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Réparateur" />
+    </group>
+
+    <item android:title="Partager / Nous rejoindre">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Partager" />
+            <item
+                android:id="@+id/nav_join"
+                android:icon="@drawable/ic_menu_directions_bike"
+                android:title="Devenir Reparateur" />
+        </menu>
+    </item>
+
+</menu>
