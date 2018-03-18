@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,34 +6,35 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/edit_what_titre"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/fragment_what" />
 
-    <TextView
-        android:id="@+id/fragment_what_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:ems="10"
+    <EditText
+        android:id="@+id/edit_what_repair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="Decrivez votre besoin de réparation"
         android:inputType="textMultiLine"
-        android:text="Commander une réparation
-
-    Coordonnées: édition de votre profil
-    Réparation: descriptif de l'intervention attendue
-    Quand: créneau horaire souhaité
-    Lieu: localisation de votre réparation
-    Réparateur: choix de votre réparateur
-
- Vous pouvez valider votre commande en cliquant sur le charriot.
-
- Partage / nous rejoindre
-
-    Partager: partager l'application
-    Nous rejoindre: devenir réparateur
-
-Accueil: vous pouvez revenir à l'accueil (bouton en haut à droite)
-
-        " />
+        android:maxLines="30"
+        android:minLines="15"
+        android:padding="10dp"
+        android:scrollbars="vertical" />
+    <ImageButton
+        android:id="@+id/btn_what_save"
+        android:layout_marginTop="18dp"
+        android:layout_width="@dimen/button_margin"
+        android:layout_height="@dimen/button_margin"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/edit_what_repair"
+        android:background = "@drawable/roundedbutton"
+        android:src="@drawable/ic_save"/>
 
 
-</FrameLayout>
+
+</RelativeLayout>

@@ -1,23 +1,25 @@
 <resources>
-    <string name="app_name">Bicyclopresto Bike Repair</string>
+    <string name="app_name">BikeRepair By Bicyclopresto</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Accueil</string>
+    <string name="action_settings">Instructions</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_home">Hello fragment home</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_profil">Veuillez renseigner vos coordonnées</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment_what">Hello fragment what</string>
+    <string name="fragment_what">Decrivez votre besoin de réparation</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment_when">Hello fragment when</string>
+    <string name="fragment_when">Donnez nous votre souhait de créneau horaire</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment_where">Hello fragment where</string>
+    <string name="fragment_where">Indiquez le lieu de votre réparation (Ville Adresse)</string>
+    <string name="fragment_where_save">Votre choix:</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment_fix">Hello fragment fix</string>
+    <string name="fragment_fix">Choisissez votre réparateur</string>
+    <string name="fragment_fix_save">Votre choix:</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_share">Hello fragment share</string>
     <!-- TODO: Remove or change this placeholder text -->

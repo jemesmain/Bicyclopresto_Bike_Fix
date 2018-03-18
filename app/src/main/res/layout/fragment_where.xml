@@ -1,13 +1,72 @@
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_where">
 
-    <!-- TODO: Update blank fragment layout -->
+
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="16dp"
         android:text="@string/fragment_where" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+
+    <fragment android:id="@+id/place_autocomplete_fragment"
+        android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:text="@string/fragment_where_save"
+            android:layout_marginTop="150dp"/>
+        <TextView
+            android:id="@+id/fragment_where_save"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginTop="175dp"
+            android:text="last saved adress" />
+
+
+    <ImageButton
+        android:id="@+id/btn_where_save"
+
+        android:layout_width="@dimen/button_margin"
+        android:layout_height="@dimen/button_margin"
+        android:layout_gravity="bottom|center"
+        android:layout_below="@+id/edit_profil_phone"
+        android:background = "@drawable/roundedbutton"
+        android:src="@drawable/ic_save"/>
+
+    </FrameLayout>
+
+
+   
 
 </FrameLayout>
