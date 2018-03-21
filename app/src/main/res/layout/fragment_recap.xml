@@ -1,0 +1,94 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_recap">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Coordonnées:" />
+    <TextView
+        android:id="@+id/fragment_recap_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp"
+        android:text="name" />
+    <TextView
+        android:id="@+id/fragment_recap_mail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp"
+        android:text="mail" />
+    <TextView
+        android:id="@+id/fragment_recap_phone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="72dp"
+        android:text="phone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="96dp"
+        android:text="Réparations:" />
+    <TextView
+        android:id="@+id/fragment_recap_repair"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:text="reparation" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:text="RDV souhaité le:" />
+    <TextView
+        android:id="@+id/fragment_recap_date"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="224dp"
+        android:text="RDV date" />
+    <TextView
+        android:id="@+id/fragment_recap_time"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="248dp"
+        android:text="RDV time" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="272dp"
+        android:text="Adresse:" />
+    <TextView
+        android:id="@+id/fragment_recap_where"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="296dp"
+        android:text="Adresse" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="320dp"
+        android:text="Reparateur / Magasin:" />
+    <TextView
+        android:id="@+id/fragment_recap_fix"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="344dp"
+        android:text="Reparateur / magasin" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="375dp"
+        android:text="Le réparateur prendra contact avec vous
+Veuillez valider en appuyant sur le charriot
+Puis sur envoyer
+Ou effectuez des modifications" />
+
+</FrameLayout>

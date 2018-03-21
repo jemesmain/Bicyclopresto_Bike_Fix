@@ -80,14 +80,14 @@ public class Fragment_fix extends Fragment {
         listView.setOnChildClickListener(new OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int groupPosition, int childPosition, long id) {
-                Toast.makeText(
-                        getContext(),
-                        listDataHeader.get(groupPosition)
-                                + " : "
-                                + listHash.get(
-                                listDataHeader.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
+                //Toast.makeText(
+                //        getContext(),
+                //        listDataHeader.get(groupPosition)
+                //                + " : "
+                //                + listHash.get(
+                //                listDataHeader.get(groupPosition)).get(
+                //                childPosition), Toast.LENGTH_SHORT)
+                //        .show();
                 text_fix.setText(listDataHeader.get(groupPosition)
                         + " : "
                         + listHash.get(
@@ -109,7 +109,11 @@ public class Fragment_fix extends Fragment {
                 editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(), "Magasin: " +text_fix.getText().toString()
 
-                        , Toast.LENGTH_LONG).show();
+                        , Toast.LENGTH_SHORT).show();
+
+                Fragment_recap fragment_recap = new Fragment_recap();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_recap).commit();
 
 
             }
@@ -131,21 +135,18 @@ public class Fragment_fix extends Fragment {
 
         List<String> Grenoble = new ArrayList<>();
         Grenoble.add("Bicyclopresto");
-        Grenoble.add("Bike Corner");
-        Grenoble.add("Energy Bikes");
-        Grenoble.add("Cyclolivine");
-        Grenoble.add("Edelbikes");
+
 
         List<String> Crolles = new ArrayList<>();
-        Crolles.add("Cycle Bentoline");
+
 
 
         List<String> Chambery = new ArrayList<>();
-        Chambery.add("Cycles Claude Verdun");
+
 
 
         List<String> Annecy = new ArrayList<>();
-        Annecy.add("Dave Bike Racing");
+
 
         listHash.put(listDataHeader.get(0),Grenoble);
         listHash.put(listDataHeader.get(1),Crolles);

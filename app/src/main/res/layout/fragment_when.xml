@@ -55,7 +55,7 @@
                 android:layout_gravity="center_horizontal"
 
                 android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_save"/>
+                android:src="@drawable/ic_menu_forward"/>
 
 
             <!-- android:datePickerMode="spinner"

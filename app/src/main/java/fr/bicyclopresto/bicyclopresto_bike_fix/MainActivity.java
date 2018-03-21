@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity
         emailIntent.setType("text/plain");
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Demande de réparation");
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Demande de réparation de la part de "+settings.getString("profil_name", "").toString());
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Name: " +settings.getString("profil_name", "").toString()
                 + "\n Mail: " +settings.getString("profil_mail", "").toString()
                 + "\n Phone: " +settings.getString("profil_phone", "").toString()
@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity
                 + "\n Adresse: "+settings.getString("where_repair", "").toString()
                 + "\n Magasin: "+settings.getString("fix_name", "").toString()
                 + "\n \n Courriel généré l'application Google Play Store:" +
-                        "\n Bike Repair by BicycloPresto \n\n Diffusez Largement \n \n"
+                        "\n BikeMeeting by BicycloPresto \n\n Diffusez Largement \n \n"
                 );
 
         try {

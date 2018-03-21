@@ -62,7 +62,7 @@
         android:layout_gravity="bottom|center"
         android:layout_below="@+id/edit_profil_phone"
         android:background = "@drawable/roundedbutton"
-        android:src="@drawable/ic_save"/>
+        android:src="@drawable/ic_menu_forward"/>
 
     </FrameLayout>
 

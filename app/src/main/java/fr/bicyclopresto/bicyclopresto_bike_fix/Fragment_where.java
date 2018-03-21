@@ -65,9 +65,9 @@ public class Fragment_where extends Fragment {
 
         text_where.setText(settings.getString("where_repair", "").toString());
 
-        Toast.makeText(getActivity().getApplicationContext(), "Adresse: " +settings.getString("where_repair", "").toString()
+       // Toast.makeText(getActivity().getApplicationContext(), "Adresse: " +settings.getString("where_repair", "").toString()
 
-                , Toast.LENGTH_LONG).show();
+        //        , Toast.LENGTH_LONG).show();
 
         //You don't add a fragment into other fragment by the
         //property "name" in your Layout. You must use:
@@ -87,16 +87,19 @@ public class Fragment_where extends Fragment {
             public void onPlaceSelected(Place place) {
 
 // TODO: Get info about the selected place.
-                Log.i(TAG, "Place: " + place.getName());
-                Toast.makeText(getActivity().getApplicationContext(),place.getAddress(),Toast.LENGTH_SHORT).show();
+                //Log.i(TAG, "Place: " + place.getName());
+                //Toast.makeText(getActivity().getApplicationContext(),place.getAddress(),Toast.LENGTH_SHORT).show();
+
                 text_where.setText(place.getAddress());
+
+
             }
 
             @Override
             public void onError(Status status) {
 // TODO: Handle the error.
-                Log.i(TAG, "An error occurred: " + status);
-                Toast.makeText(getActivity().getApplicationContext(),status.toString(),Toast.LENGTH_SHORT).show();
+                //Log.i(TAG, "An error occurred: " + status);
+                //Toast.makeText(getActivity().getApplicationContext(),status.toString(),Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -110,7 +113,11 @@ public class Fragment_where extends Fragment {
                 editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(), "Adresse: " +text_where.getText().toString()
 
-                        , Toast.LENGTH_LONG).show();
+                        , Toast.LENGTH_SHORT).show();
+
+                Fragment_fix fragment_fix = new Fragment_fix();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_fix).commit();
 
 
             }

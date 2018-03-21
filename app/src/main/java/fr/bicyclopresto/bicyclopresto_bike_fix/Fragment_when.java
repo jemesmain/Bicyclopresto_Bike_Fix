@@ -57,9 +57,9 @@ public class Fragment_when extends Fragment {
         //edit_when_date.setText(settings.getString("when_date", "").toString());
         //edit_when_time.setText(settings.getString("when_time", "").toString());
 
-        Toast.makeText(getActivity().getApplicationContext(), "RDV souhaité le: " +settings.getString("when_date", "").toString()
-                + " " +settings.getString("when_time", "").toString()
-                , Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity().getApplicationContext(), "RDV souhaité le: " +settings.getString("when_date", "").toString()
+        //        + " " +settings.getString("when_time", "").toString()
+        //        , Toast.LENGTH_LONG).show();
 
         btnSaveWhen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +90,11 @@ public class Fragment_when extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "RDV souhaité le: " +formatedDate
                         +" " + time
 
-                        , Toast.LENGTH_LONG).show();
+                        , Toast.LENGTH_SHORT).show();
+
+                Fragment_where fragment_where = new Fragment_where();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_where).commit();
 
 
             }

@@ -58,7 +58,7 @@
         android:layout_centerInParent="true"
         android:layout_below="@+id/edit_profil_phone"
         android:background = "@drawable/roundedbutton"
-        android:src="@drawable/ic_save"/><!--image drawable on Right side of Text on button-->
+        android:src="@drawable/ic_menu_forward"/><!--image drawable on Right side of Text on button-->
 
 
 </RelativeLayout>

@@ -46,9 +46,9 @@ public class Fragment_what extends Fragment {
 
         edit_what.setText(settings.getString("what_repair", "").toString());
 
-        Toast.makeText(getActivity().getApplicationContext(), "Reparation: " +settings.getString("what_repair", "").toString()
+        //Toast.makeText(getActivity().getApplicationContext(), "Reparation: " +settings.getString("what_repair", "").toString()
 
-                , Toast.LENGTH_LONG).show();
+         //       , Toast.LENGTH_LONG).show();
 
         btnSaveWhat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,11 @@ public class Fragment_what extends Fragment {
                 editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(), "Reparation: " +edit_what.getText().toString()
 
-                        , Toast.LENGTH_LONG).show();
+                        , Toast.LENGTH_SHORT).show();
+
+                Fragment_when fragment_when = new Fragment_when();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_when).commit();
 
 
             }

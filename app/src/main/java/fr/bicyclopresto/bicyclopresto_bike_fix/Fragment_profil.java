@@ -57,10 +57,10 @@ public class Fragment_profil extends Fragment {
         profil_name.setText(settings.getString("profil_name", "").toString());
         profil_mail.setText(settings.getString("profil_mail", "").toString());
         profil_phone.setText(settings.getString("profil_phone", "").toString());
-        Toast.makeText(getActivity().getApplicationContext(), "Name: " +settings.getString("profil_name", "").toString()
-                + "\n Mail: " +settings.getString("profil_mail", "").toString()
-                + "\n Phone: " +settings.getString("profil_phone", "").toString()
-                , Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity().getApplicationContext(), "Name: " +settings.getString("profil_name", "").toString()
+        //        + "\n Mail: " +settings.getString("profil_mail", "").toString()
+        //        + "\n Phone: " +settings.getString("profil_phone", "").toString()
+        //        , Toast.LENGTH_LONG).show();
         //profil_name.setText("toto");
 
         btnSaveProfil.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +76,11 @@ public class Fragment_profil extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "Name: " +profil_name.getText().toString()
                         + "\n Mail: " +profil_mail.getText().toString()
                         + "\n Phone: " +profil_phone.getText().toString()
-                        , Toast.LENGTH_LONG).show();
+                        , Toast.LENGTH_SHORT).show();
+
+                Fragment_what fragment_what = new Fragment_what();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_what).commit();
 
 
             }
