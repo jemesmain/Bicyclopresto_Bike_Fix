@@ -50,6 +50,7 @@ public class Fragment_recap extends Fragment {
         final TextView recap_mail = rootView.findViewById(R.id.fragment_recap_mail);
         final TextView recap_phone = rootView.findViewById(R.id.fragment_recap_phone);
 
+        final TextView recap_ambulant = rootView.findViewById(R.id.fragment_recap_ambulant);
         final TextView recap_repair = rootView.findViewById(R.id.fragment_recap_repair);
 
         final TextView recap_date = rootView.findViewById(R.id.fragment_recap_date);
@@ -68,6 +69,7 @@ public class Fragment_recap extends Fragment {
         recap_mail.setText(settings.getString("profil_mail", "").toString());
         recap_phone.setText(settings.getString("profil_phone", "").toString());
 
+        recap_ambulant.setText(settings.getString("what_mode_repair", "").toString());
         recap_repair.setText(settings.getString("what_repair", "").toString());
 
         recap_date.setText(settings.getString("when_date", "").toString());

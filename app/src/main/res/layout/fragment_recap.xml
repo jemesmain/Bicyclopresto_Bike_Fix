@@ -34,11 +34,17 @@
         android:layout_marginTop="96dp"
         android:text="Réparations:" />
     <TextView
-        android:id="@+id/fragment_recap_repair"
+        android:id="@+id/fragment_recap_ambulant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="120dp"
-        android:text="reparation" />
+        android:text="mode reparation" />
+    <TextView
+        android:id="@+id/fragment_recap_repair"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="144dp"
+        android:text="quelle reparation" />
 
     <TextView
         android:layout_width="match_parent"

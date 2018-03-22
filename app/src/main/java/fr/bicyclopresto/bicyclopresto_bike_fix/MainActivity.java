@@ -167,6 +167,15 @@ public class MainActivity extends AppCompatActivity
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.fragment, fragment_fix).commit();
 
+        } else if (id == R.id.nav_recap) {
+            Fragment_recap fragment_recap = new Fragment_recap();
+            android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment, fragment_recap).commit();
+
+
+
+
+
         } else if (id == R.id.nav_share) {
             Fragment_share fragment_share = new Fragment_share();
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
@@ -221,6 +230,8 @@ public class MainActivity extends AppCompatActivity
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Name: " +settings.getString("profil_name", "").toString()
                 + "\n Mail: " +settings.getString("profil_mail", "").toString()
                 + "\n Phone: " +settings.getString("profil_phone", "").toString()
+                + "\n Mode Reparation: " +settings.getString("what_mode_repair", "").toString()
+                + "\n * si le mode de réparation est magasin ne pas tenir compte de l'adresse"
                 + "\n Reparation: " +settings.getString("what_repair", "").toString()
                 + "\n RDV souhaité: "+settings.getString("when_date", "").toString()+" "+ settings.getString("when_time", "").toString()
                 + "\n Adresse: "+settings.getString("where_repair", "").toString()

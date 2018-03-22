@@ -11,6 +11,35 @@
         android:layout_height="match_parent"
         android:text="@string/fragment_what" />
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/what_ambulant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="24dp"
+            android:checked="true"
+            android:text="a domicile / en entreprise"
+
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/what_magasin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+            android:text="En magasin"
+
+            android:textStyle="bold" />
+
+
+    </RadioGroup>
+
     <EditText
         android:id="@+id/edit_what_repair"
         android:layout_width="wrap_content"

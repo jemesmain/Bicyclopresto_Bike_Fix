@@ -50,6 +50,8 @@ public class Fragment_fix extends Fragment {
         // rootview permet d'accéder aux différents éléments du fragment
         View rootView = inflater.inflate(R.layout.fragment_fix, container, false);
         //DECLARATION DES VARIABLES
+        Boolean ambulant = true;
+        String mode_repair ="";
 
         ImageButton btnSaveFix = (ImageButton) rootView.findViewById(R.id.btn_fix_save);
         final TextView text_fix = rootView.findViewById(R.id.fragment_fix_save);
@@ -60,10 +62,21 @@ public class Fragment_fix extends Fragment {
 
         text_fix.setText(settings.getString("fix_name", "").toString());
 
-        Toast.makeText(getActivity().getApplicationContext(), "Magasin: " +settings.getString("fix_name", "").toString()
+        //Toast.makeText(getActivity().getApplicationContext(), "Magasin: " +settings.getString("fix_name", "").toString()
 
-                , Toast.LENGTH_LONG).show();
+        //       , Toast.LENGTH_LONG).show();
 
+        // test de en magasin ou a domicile / en entreprise
+        mode_repair = settings.getString("what_mode_repair","").toString();
+        //Toast.makeText(getActivity().getApplicationContext(), "mode repair / ambulant: " + mode_repair +" / "+ ambulant
+
+        //        , Toast.LENGTH_SHORT).show();
+        if (mode_repair.equals("En magasin")){
+            ambulant = false;
+        //    Toast.makeText(getActivity().getApplicationContext(), "ambulant is set: " +  ambulant
+
+        //            , Toast.LENGTH_SHORT).show();
+        }
 
 
 
@@ -73,7 +86,7 @@ public class Fragment_fix extends Fragment {
             //setContentView(R.layout.activity_main);
 
             listView = (ExpandableListView)rootView.findViewById(R.id.lvExp);
-            initData();
+            initData(ambulant);
             listAdapter = new ExpandableListAdapter(getActivity(),listDataHeader,listHash);
             listView.setAdapter(listAdapter);
 
@@ -124,34 +137,51 @@ public class Fragment_fix extends Fragment {
     }
 
 
-    private void initData()  {
+    private void initData(boolean ambulant)  {
         listDataHeader = new ArrayList<>();
         listHash = new HashMap<>();
+        // si ambulant = true alors on construit une liste de réparateur ambulant
+        if (ambulant==true){
 
-        listDataHeader.add("Grenoble");
-        listDataHeader.add("Crolles");
-        listDataHeader.add("Chambery");
-        listDataHeader.add("Annecy");
+            listDataHeader.add("Grenoble");
+            List<String> Grenoble = new ArrayList<>();
+            Grenoble.add("Bicyclopresto");
 
-        List<String> Grenoble = new ArrayList<>();
-        Grenoble.add("Bicyclopresto");
+            listHash.put(listDataHeader.get(0),Grenoble);
+
+        } else {
+
+            listDataHeader.add("Grenoble");
+            listDataHeader.add("Crolles");
+            listDataHeader.add("Chambery");
+            listDataHeader.add("Annecy");
+
+            List<String> Grenoble = new ArrayList<>();
+            Grenoble.add("Bicyclopresto");
+
+            List<String> Crolles = new ArrayList<>();
+
+            List<String> Chambery = new ArrayList<>();
+
+            List<String> Annecy = new ArrayList<>();
+
+            listHash.put(listDataHeader.get(0),Grenoble);
+            listHash.put(listDataHeader.get(1),Crolles);
+            listHash.put(listDataHeader.get(2),Chambery);
+            listHash.put(listDataHeader.get(3),Annecy);
+
+        }
 
 
-        List<String> Crolles = new ArrayList<>();
 
 
 
-        List<String> Chambery = new ArrayList<>();
 
 
 
-        List<String> Annecy = new ArrayList<>();
 
 
-        listHash.put(listDataHeader.get(0),Grenoble);
-        listHash.put(listDataHeader.get(1),Crolles);
-        listHash.put(listDataHeader.get(2),Chambery);
-        listHash.put(listDataHeader.get(3),Annecy);
+
     }
 
 
