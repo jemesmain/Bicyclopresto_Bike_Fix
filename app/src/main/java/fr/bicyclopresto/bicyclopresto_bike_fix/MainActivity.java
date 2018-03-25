@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -81,11 +82,17 @@ public class MainActivity extends AppCompatActivity
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment, fragment_home).commit();
 
-
-
-
-
     }
+
+    public void ouvrirDrawer() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.openDrawer(Gravity.START);
+    }
+
+
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -237,7 +244,7 @@ public class MainActivity extends AppCompatActivity
                 + "\n Adresse: "+settings.getString("where_repair", "").toString()
                 + "\n Magasin: "+settings.getString("fix_name", "").toString()
                 + "\n \n Courriel généré l'application Google Play Store:" +
-                        "\n BikeMeeting by BicycloPresto \n\n Diffusez Largement \n \n"
+                        "\n BikeMeeting by BicycloPresto \n\n https://play.google.com/store/apps/details?id=fr.bicyclopresto.bicyclopresto_bike_fix \n\n Diffusez Largement \n \n"
                 );
 
         try {
@@ -247,6 +254,60 @@ public class MainActivity extends AppCompatActivity
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(MainActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+    protected void sendEmailJoin() {
+        Log.i("Send email", "");
+        final SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = settings.edit();
+
+        //choix du destinataire TO
+        String magasin = settings.getString("fix_name", "").toString();
+        String fix_mail ="";
+
+
+
+
+
+        String[] TO = {"contact@bicyclopresto.fr"};
+        String[] CC = {"app@bicyclopresto.fr"};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+
+
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Demande d'utilisation de l'application par: "+settings.getString("join_mag", "").toString());
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Ville: " +settings.getString("join_town", "").toString()
+                + "\n Magasin: " +settings.getString("join_mag", "").toString()
+                + "\n Type de réparation: " +settings.getString("join_type", "").toString()
+                + "\n Qualification cycle: " +settings.getString("join_qualif", "").toString()
+                + "\n Telephone: " +settings.getString("join_phone", "").toString()
+
+                +"\n\n BikeMeeting by BicycloPresto sur google play \n\n https://play.google.com/store/apps/details?id=fr.bicyclopresto.bicyclopresto_bike_fix \n\n Diffusez Largement \n \n"
+        );
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished sending email...", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(MainActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    public static void shareApp(Context context)
+    {
+        final String appPackageName = context.getPackageName();
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "Je vous invite à utiliser BikeMeeting, l'application de rencontre entre votre vélo et son réparateur: https://play.google.com/store/apps/details?id=" + appPackageName);
+        sendIntent.setType("text/plain");
+        context.startActivity(sendIntent);
     }
 
 }

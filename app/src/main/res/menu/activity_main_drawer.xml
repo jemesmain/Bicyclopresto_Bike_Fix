@@ -7,27 +7,27 @@
         <item
             android:id="@+id/nav_profil"
             android:icon="@drawable/ic_menu_fingerprint"
-            android:title="Coordonnées" />
+            android:title="1 Coordonnées" />
         <item
             android:id="@+id/nav_what"
             android:icon="@drawable/ic_menu_motorcycle"
-            android:title="Réparation vélos / fauteuil" />
+            android:title="2 Réparation vélos / fauteuil" />
         <item
             android:id="@+id/nav_when"
             android:icon="@drawable/ic_menu_today"
-            android:title="Quand" />
+            android:title="3 Quand" />
         <item
             android:id="@+id/nav_where"
             android:icon="@drawable/ic_menu_add_location"
-            android:title="Lieu" />
+            android:title="4 Lieu" />
         <item
             android:id="@+id/nav_fix"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Réparateur" />
+            android:title="5 Réparateur" />
         <item
             android:id="@+id/nav_recap"
             android:icon="@drawable/ic_menu_receipt"
-            android:title="Récapitulatif" />
+            android:title="6 Récapitulatif / Validation" />
 
     </group>
 

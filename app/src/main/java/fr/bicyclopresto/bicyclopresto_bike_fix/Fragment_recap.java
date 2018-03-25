@@ -56,7 +56,7 @@ public class Fragment_recap extends Fragment {
         final TextView recap_date = rootView.findViewById(R.id.fragment_recap_date);
         final TextView recap_time = rootView.findViewById(R.id.fragment_recap_time);
 
-        final TextView recap_where = rootView.findViewById(R.id.fragment_recap_time);
+        final TextView recap_where = rootView.findViewById(R.id.fragment_recap_where);
 
         final TextView recap_fix = rootView.findViewById(R.id.fragment_recap_fix);
 

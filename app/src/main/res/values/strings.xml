@@ -23,8 +23,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_share">En cours de construction</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment_join">Pour bénéficier de cette application de demmande de réparation:
-    contact@bibcyclopresto.fr</string>
+    <string name="fragment_join">Pour utiliser cette application pour votre magasin remplissez les éléments suivants:</string>
 
 
     <string name="title_activity_maps">Map</string>
@@ -36,6 +35,14 @@
     <string name="profil_name">prenom nom</string>
     <string name="profil_email">email</string>
     <string name="profil_number">numero de telephone</string>
+
+    <!-- Contenu de fragment join -->
+    <string name="join_town">ville</string>
+    <string name="join_mag">nom du magasin</string>
+    <string name="join_type">réparation: mag / ambulant / les 2</string>
+    <string name="join_qualif">qualif: aucune / CQP cycle / autre</string>
+    <string name="join_phone">telephone</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

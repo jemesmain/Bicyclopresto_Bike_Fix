@@ -44,14 +44,18 @@
             android:layout_height="match_parent"
 
             android:text="@string/fragment_where_save"
-            android:layout_marginTop="150dp"/>
+            android:layout_marginTop="150dp"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/fragment_where_save"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
             android:layout_marginTop="175dp"
-            android:text="last saved adress" />
+            android:text="last saved adress"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
 
     <ImageButton
