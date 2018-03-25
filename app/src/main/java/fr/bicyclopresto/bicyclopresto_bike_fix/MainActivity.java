@@ -9,6 +9,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.URLSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -227,6 +230,15 @@ public class MainActivity extends AppCompatActivity
         String[] CC = {"app@bicyclopresto.fr"};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
+        String url = "https://play.google.com/store/apps/details?id=fr.bicyclopresto.bicyclopresto_bike_fix";
+
+        SpannableStringBuilder builder = new SpannableStringBuilder();
+        builder.append("BikeMeeting by BicycloPresto ");
+        int start = builder.length();
+        builder.append(url);
+        int end = builder.length();
+
+        builder.setSpan(new URLSpan(url), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
         emailIntent.setData(Uri.parse("mailto:"));
@@ -243,8 +255,9 @@ public class MainActivity extends AppCompatActivity
                 + "\n RDV souhaité: "+settings.getString("when_date", "").toString()+" "+ settings.getString("when_time", "").toString()
                 + "\n Adresse: "+settings.getString("where_repair", "").toString()
                 + "\n Magasin: "+settings.getString("fix_name", "").toString()
-                + "\n \n Courriel généré l'application Google Play Store:" +
-                        "\n BikeMeeting by BicycloPresto \n\n https://play.google.com/store/apps/details?id=fr.bicyclopresto.bicyclopresto_bike_fix \n\n Diffusez Largement \n \n"
+                + "\n \n Courriel généré l'application Google Play Store: \n\n"
+                + builder
+                + " \n\n Diffusez Largement! \n \n"
                 );
 
         try {

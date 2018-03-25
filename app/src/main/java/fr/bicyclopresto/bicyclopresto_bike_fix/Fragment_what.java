@@ -70,7 +70,10 @@ public class Fragment_what extends Fragment {
                 //SharedPreferences settings = getActivity().getSharedPreferences("Bicyclopresto_bike_fix_pref", 0);
                 //SharedPreferences settings = getActivity().getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
                 //SharedPreferences.Editor editor = settings.edit();
+                // le choix du mode de réparation est sauvegardé lors de la manipulation des radiobutton
+                //editor.putString("what_mode_repair",mode_repair);
                 editor.putString("what_repair",edit_what.getText().toString());
+
                 editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(),
                         "Mode reparation: " +settings.getString("what_mode_repair","").toString()
