@@ -147,28 +147,31 @@ public class Fragment_fix extends Fragment {
             List<String> Grenoble = new ArrayList<>();
             Grenoble.add("Bicyclopresto");
 
+            listDataHeader.add("Paris");
+            List<String> Paris = new ArrayList<>();
+            Paris.add("HelpMyBike");
+
+            listDataHeader.add("Toulouse");
+            List<String> Toulouse = new ArrayList<>();
+            Toulouse.add("MecaniCycle");
+
             listHash.put(listDataHeader.get(0),Grenoble);
+            listHash.put(listDataHeader.get(1),Paris);
+            listHash.put(listDataHeader.get(2),Toulouse);
 
         } else {
 
             listDataHeader.add("Grenoble");
-            listDataHeader.add("Crolles");
-            listDataHeader.add("Chambery");
-            listDataHeader.add("Annecy");
-
             List<String> Grenoble = new ArrayList<>();
             Grenoble.add("Bicyclopresto");
 
-            List<String> Crolles = new ArrayList<>();
-
-            List<String> Chambery = new ArrayList<>();
-
-            List<String> Annecy = new ArrayList<>();
+            listDataHeader.add("Toulouse");
+            List<String> Toulouse = new ArrayList<>();
+            Toulouse.add("MecaniCycle");
 
             listHash.put(listDataHeader.get(0),Grenoble);
-            listHash.put(listDataHeader.get(1),Crolles);
-            listHash.put(listDataHeader.get(2),Chambery);
-            listHash.put(listDataHeader.get(3),Annecy);
+            listHash.put(listDataHeader.get(1),Toulouse);
+
 
         }
 

@@ -217,8 +217,11 @@ public class MainActivity extends AppCompatActivity
             case "Grenoble : Bicyclopresto":
                 fix_mail="contact@bicyclopresto.fr";
                 break;
-            case "Grenoble : Bike Corner":
-                fix_mail="clelia.mesmain@gmail.com";
+            case "Paris : HelpMyBike":
+                fix_mail="serviceclients@helpmybike.fr";
+                break;
+            case "Toulouse : MecaniCycle":
+                fix_mail="mecanicycle1@gmail.com";
                 break;
             default:
                 fix_mail="jeaneric.mesmain@gmail.com";
