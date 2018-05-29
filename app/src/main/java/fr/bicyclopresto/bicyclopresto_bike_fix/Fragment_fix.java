@@ -147,20 +147,26 @@ public class Fragment_fix extends Fragment {
             List<String> Grenoble = new ArrayList<>();
             Grenoble.add("Bicyclopresto");
 
+            listDataHeader.add("Lyon");
+            List<String> Lyon = new ArrayList<>();
+            Grenoble.add("CycloDoc");
+
             listDataHeader.add("Paris");
             List<String> Paris = new ArrayList<>();
             Paris.add("HelpMyBike");
+
 
             listDataHeader.add("Toulouse");
             List<String> Toulouse = new ArrayList<>();
             Toulouse.add("MecaniCycle");
 
             listHash.put(listDataHeader.get(0),Grenoble);
-            listHash.put(listDataHeader.get(1),Paris);
-            listHash.put(listDataHeader.get(2),Toulouse);
+            listHash.put(listDataHeader.get(1),Lyon);
+            listHash.put(listDataHeader.get(2),Paris);
+            listHash.put(listDataHeader.get(3),Toulouse);
 
         } else {
-
+        // ici c'est la liste des magasins ceux qui réparent dans un local...
             listDataHeader.add("Grenoble");
             List<String> Grenoble = new ArrayList<>();
             Grenoble.add("Bicyclopresto");
