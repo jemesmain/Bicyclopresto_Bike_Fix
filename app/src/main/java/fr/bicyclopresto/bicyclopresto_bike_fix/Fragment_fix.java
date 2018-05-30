@@ -149,7 +149,7 @@ public class Fragment_fix extends Fragment {
 
             listDataHeader.add("Lyon");
             List<String> Lyon = new ArrayList<>();
-            Grenoble.add("CycloDoc");
+            Lyon.add("CycloDoc");
 
             listDataHeader.add("Paris");
             List<String> Paris = new ArrayList<>();
