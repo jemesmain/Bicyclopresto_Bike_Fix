@@ -214,6 +214,9 @@ public class MainActivity extends AppCompatActivity
         String fix_mail ="";
 
         switch (magasin){
+            case "Ardeche : PMPV Bikeshop":
+                fix_mail="contact@pmpv-ardeche.com";
+                break;
             case "Grenoble : Bicyclopresto":
                 fix_mail="contact@bicyclopresto.fr";
                 break;

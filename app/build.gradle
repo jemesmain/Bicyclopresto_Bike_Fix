@@ -6,7 +6,7 @@ android {
         applicationId "fr.bicyclopresto.bicyclopresto_bike_fix"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 10
+        versionCode 11
         versionName "1.10"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
