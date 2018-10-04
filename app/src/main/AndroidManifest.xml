@@ -8,7 +8,15 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
+
+    //utilisation du gps afin de déterminer l'adresse de la réparation
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    //acces à la mémoire de l'appareil pour la lecture et l'écriture de la vcard en externe / pas besoin en interne??
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
 

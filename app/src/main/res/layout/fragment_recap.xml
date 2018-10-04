@@ -8,32 +8,32 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Coordonnées:"
+        android:text="  Coordonnées:"
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/fragment_recap_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="24dp"
-        android:text="name" />
+        android:text="  name" />
     <TextView
         android:id="@+id/fragment_recap_mail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="48dp"
-        android:text="mail" />
+        android:text="  mail" />
     <TextView
         android:id="@+id/fragment_recap_phone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"
-        android:text="phone" />
+        android:text="  phone" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="96dp"
-        android:text="Réparations:"
+        android:text="  Réparations:"
         android:textSize="20sp"
         android:textStyle="bold"/>
     <TextView
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="120dp"
-        android:text="mode reparation"
+        android:text="  mode reparation"
         android:textSize="20sp"
         android:textStyle="bold"/>
     <TextView
@@ -49,63 +49,58 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="144dp"
-        android:text="quelle reparation" />
+        android:text="  quelle reparation" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="200dp"
-        android:text="RDV souhaité le:"
+        android:text="  RDV souhaité le:"
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/fragment_recap_date"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="224dp"
-        android:text="RDV date" />
-    <TextView
-        android:id="@+id/fragment_recap_time"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="248dp"
-        android:text="RDV time" />
+        android:text="  RDV date" />
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="272dp"
-        android:text="Adresse:"
+        android:layout_marginTop="248dp"
+        android:text="  Adresse:"
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/fragment_recap_where"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="296dp"
-        android:text="Adresse" />
+        android:layout_marginTop="272dp"
+        android:text="  Adresse" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="320dp"
-        android:text="Reparateur / Magasin:"
+        android:layout_marginTop="296dp"
+        android:text="  Reparateur / Magasin:"
         android:textSize="20sp"
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/fragment_recap_fix"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="344dp"
-        android:text="Reparateur / magasin"
+        android:layout_marginTop="320dp"
+        android:text="  Reparateur / magasin"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="375dp"
-        android:text="Le réparateur prendra contact avec vous
-Veuillez valider en appuyant sur le charriot
-Puis sur envoyer
-Ou effectuez des modifications" />
+        android:layout_marginTop="344dp"
+        android:text="\n Le réparateur prendra contact avec vous \n\n
+Veuillez valider en appuyant sur le charriot \n\n
+Puis sur envoyer Ou effectuez des modifications \n\n
+L'application envoie un email qui contient votre demande et un fichier vcard qui contient vos coordonnées. \n\n" />
 
 </FrameLayout>

@@ -54,7 +54,7 @@ public class Fragment_recap extends Fragment {
         final TextView recap_repair = rootView.findViewById(R.id.fragment_recap_repair);
 
         final TextView recap_date = rootView.findViewById(R.id.fragment_recap_date);
-        final TextView recap_time = rootView.findViewById(R.id.fragment_recap_time);
+        //final TextView recap_time = rootView.findViewById(R.id.fragment_recap_time);
 
         final TextView recap_where = rootView.findViewById(R.id.fragment_recap_where);
 
@@ -65,20 +65,20 @@ public class Fragment_recap extends Fragment {
 
         // récupération des informations utilisateurs
 
-        recap_name.setText(settings.getString("profil_name", "").toString());
-        recap_mail.setText(settings.getString("profil_mail", "").toString());
-        recap_phone.setText(settings.getString("profil_phone", "").toString());
+        recap_name.setText("  "+settings.getString("profil_name", "").toString());
+        recap_mail.setText("  "+settings.getString("profil_mail", "").toString());
+        recap_phone.setText("  "+settings.getString("profil_phone", "").toString());
 
-        recap_ambulant.setText(settings.getString("what_mode_repair", "").toString());
-        recap_repair.setText(settings.getString("what_repair", "").toString());
+        recap_ambulant.setText("  "+settings.getString("what_mode_repair", "").toString());
+        recap_repair.setText("  "+settings.getString("what_repair", "").toString());
 
-        recap_date.setText(settings.getString("when_date", "").toString());
-        recap_time.setText(settings.getString("when_time", "").toString());
+        recap_date.setText("  "+ settings.getString("when_date", "").toString()+" a "+settings.getString("when_time", "").toString());
+        //recap_time.setText(settings.getString("when_time", "").toString());
 
-        recap_where.setText(settings.getString("where_repair", "").toString());
+        recap_where.setText("  "+settings.getString("where_repair", "").toString());
 
 
-        recap_fix.setText(settings.getString("fix_name", "").toString());
+        recap_fix.setText("  "+settings.getString("fix_name", "").toString());
 
 
 

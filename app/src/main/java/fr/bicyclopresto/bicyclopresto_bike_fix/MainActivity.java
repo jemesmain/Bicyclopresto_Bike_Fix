@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.text.Spannable;
@@ -33,15 +34,28 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+
+import static android.os.Environment.getExternalStorageDirectory;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private GoogleApiClient mGoogleApiClient;
 
+    // pour createVCard
+    private static final String VCF_DIRECTORY = "/bikemeeting_vcard/";
+    private static final String VCF_NAME = "bikemeeting_customer_vcard.vcf";
+    private File vcfFile;
+    //private String str_chemin = this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() + "fichier.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,6 +218,118 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    protected void createVCard () {
+
+//essai en internal storage au final gmail n'a pas les droits pour l'attacher au mail
+/*
+        String dirName = "vcard"
+        public File getPublicStorageDir(String dirName) {
+            // Get the directory for the user's public pictures directory.
+            File fileDir = new File(Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_DOCUMENTS), dirName);
+            if (!fileDir.mkdirs()) {
+                Log.e(LOG_TAG, "Directory not created");
+            }
+            return fileDir;
+        }
+
+
+
+
+        String filename = "customer.vcf";
+        String fileContents = "Hello world!";
+        FileOutputStream outputStream;
+        File file = new File(getFilesDir(), filename);
+
+        try {
+            //outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(fileContents.getBytes());
+            outputStream.close();
+            Toast.makeText(MainActivity.this, "VCard created!", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(MainActivity.this, "Exception VCard", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+*/
+
+
+//essai en external storage
+        //acces au settings
+        final SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = settings.edit();
+
+        File vdfdirectory = null;
+        try {
+            // File vcfFile = new File(this.getExternalFilesDir(null), "generated.vcf");
+            vdfdirectory = new File(
+                    getExternalStorageDirectory() + VCF_DIRECTORY);
+            //avec cela ca fonctionne pas Environment.getExternalStorageDirectory() /storage emulated O
+            // have the object build the directory structure, if needed.
+            if (!vdfdirectory.exists()) {
+                vdfdirectory.mkdirs();
+            }
+
+            //vcfFile = new File(vdfdirectory, "android_"+ Calendar.getInstance().getTimeInMillis() + ".vcf");
+            vcfFile = new File(vdfdirectory, VCF_NAME);
+
+            File chemin = this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+
+            File fichier = new File(chemin,VCF_NAME);
+            fichier.createNewFile();
+            FileWriter fw = null;
+            fw = new FileWriter(fichier);
+            //fw.write("hello Clelia world!");
+            fw.write("BEGIN:VCARD\r\n");
+            fw.write("VERSION:3.0\r\n");
+            fw.write("FN:" + settings.getString("profil_name", "").toString() + "\r\n");
+            fw.write("TEL;TYPE=WORK,VOICE:" + settings.getString("profil_phone", "").toString() + "\r\n");
+            fw.write("ADR;TYPE=WORK:" + settings.getString("where_repair", "").toString() + "\r\n");
+            fw.write("EMAIL;TYPE=PREF,INTERNET:" + settings.getString("profil_mail", "").toString() + "\r\n");
+            fw.write("END:VCARD\r\n");
+            fw.close();
+
+            //OutputStreamWriter outputStreamWriter = new OutputStreamWriter(this.openFileOutput("/storage/emulated/0/Android/data/fr.bicyclopresto.bicyclopresto_bike_fix/files/Download/fichier.txt", Context.MODE_APPEND));
+            //OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fichier);
+            //outputStreamWriter.write("hello world");
+            //outputStreamWriter.close();
+/*
+            //Vcard example
+            FileWriter fw = null;
+            fw = new FileWriter(vcfFile);
+            fw.write("BEGIN:VCARD\r\n");
+            fw.write("VERSION:3.0\r\n");
+            // fw.write("N:" + p.getSurname() + ";" + p.getFirstName() + "\r\n");
+            //fw.write("FN:" + etname.getText().toString() + "\r\n");
+            fw.write("FN:" + settings.getString("profil_name", "").toString() + "\r\n");
+            //  fw.write("ORG:" + p.getCompanyName() + "\r\n");
+            //  fw.write("TITLE:" + p.getTitle() + "\r\n");
+            //fw.write("TEL;TYPE=WORK,VOICE:" + etphon.getText().toString() + "\r\n");
+            fw.write("TEL;TYPE=WORK,VOICE:" + settings.getString("profil_phone", "").toString() + "\r\n");
+            //   fw.write("TEL;TYPE=HOME,VOICE:" + p.getHomePhone() + "\r\n");
+            fw.write("ADR;TYPE=WORK:;;" + p.getStreet() + ";" + p.getCity() + ";" + p.getState() + ";" + p.getPostcode() + ";" + p.getCountry() + "\r\n");
+            //fw.write("EMAIL;TYPE=PREF,INTERNET:" + etmail.getText().toString() + "\r\n");
+            fw.write("EMAIL;TYPE=PREF,INTERNET:" + settings.getString("profil_mail", "").toString() + "\r\n");
+            fw.write("END:VCARD\r\n");
+            fw.close();
+*/
+                   /* Intent i = new Intent(); //this will import vcf in contact list
+                    i.setAction(android.content.Intent.ACTION_VIEW);
+                    i.setDataAndType(Uri.fromFile(vcfFile), "text/x-vcard");
+                    startActivity(i);*/
+
+            Toast.makeText(MainActivity.this, "VCard created!", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            Toast.makeText(MainActivity.this, "Exception VCard \r\n"
+                            + "directory: " + this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + "\r\n"
+                            + "name: " + VCF_NAME + "\r\n"
+                    , Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+
+    }
+
+
     protected void sendEmail() {
         Log.i("Send email", "");
         final SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
@@ -236,7 +362,8 @@ public class MainActivity extends AppCompatActivity
                 fix_mail="jeaneric.mesmain@gmail.com";
         }
 
-
+        //creation de la vcard
+        createVCard();
 
         String[] TO = {fix_mail};
         String[] CC = {"app@bicyclopresto.fr"};
@@ -257,7 +384,16 @@ public class MainActivity extends AppCompatActivity
         emailIntent.setType("text/plain");
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Demande de réparation de la part de "+settings.getString("profil_name", "").toString());
+
+        //joindre la Vcard
+        //emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse( "file://"+filelocation));
+        //emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://"+"Android/data/fr.bicyclopresto.bicyclopresto_bike_fix/files/Download"  +"/"+ "fichier.txt"));
+        emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///"+ this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) +"/"+ VCF_NAME));
+        //emailIntent.putExtra(Intent.EXTRA_STREAM, "/"+"storage/emulated/0/Android/data/fr.bicyclopresto.bicyclopresto_bike_fix/files/Download"  +"/"+ "fichier.txt");
+        //Toast.makeText(MainActivity.this, "Attachment path: "+ this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() +"/"+"fichier.txt", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "Vcard Attachment path: " + this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) +"\n Vcard filename: "+ VCF_NAME, Toast.LENGTH_LONG).show();
+
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Demande de réparation de la part de "+settings.getString("profil_name", "").toString());
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Name: " +settings.getString("profil_name", "").toString()
                 + "\n Mail: " +settings.getString("profil_mail", "").toString()
                 + "\n Phone: " +settings.getString("profil_phone", "").toString()
