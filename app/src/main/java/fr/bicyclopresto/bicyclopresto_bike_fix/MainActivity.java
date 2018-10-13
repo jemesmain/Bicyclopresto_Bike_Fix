@@ -1,15 +1,21 @@
 package fr.bicyclopresto.bicyclopresto_bike_fix;
 
+import android.Manifest;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.URLSpan;
@@ -44,17 +50,24 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
+import static android.content.Intent.EXTRA_STREAM;
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
 import static android.os.Environment.getExternalStorageDirectory;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    //private static final Object MainActivity = ;
     private GoogleApiClient mGoogleApiClient;
 
+    // pour gerer les droits
+    private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
+
+
     // pour createVCard
-    private static final String VCF_DIRECTORY = "/bikemeeting_vcard/";
-    private static final String VCF_NAME = "bikemeeting_customer_vcard.vcf";
-    private File vcfFile;
+    //private static final String VCF_PATH = "storage/emulated/0/Android/data/fr.bicyclopresto.bicyclopresto_bike_fix/files/Download";
+    private static final String VCF_NAME = "vcard.vcf";
+    //private File vcfFile;
     //private String str_chemin = this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() + "fichier.txt";
 
     @Override
@@ -62,7 +75,10 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //gestion des droits aide pedro
+        //checkAndRequestPermissions();
 
+       
 
 
 
@@ -218,6 +234,45 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+/*
+    public boolean checkPermissionForReadExtertalStorage() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int result = context.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
+            return result == PackageManager.PERMISSION_GRANTED;
+        }
+        return false;
+    }
+*/
+
+
+
+ /*
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    Log.d("taq auth", "read external storage was granted, yay!");
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Log.d("taq auth", "read external storage denied, boo! Disable");
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request.
+        }
+    }
+*/
+
     protected void createVCard () {
 
 //essai en internal storage au final gmail n'a pas les droits pour l'attacher au mail
@@ -259,26 +314,35 @@ public class MainActivity extends AppCompatActivity
         final SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = settings.edit();
 
-        File vdfdirectory = null;
+        //File vdfdirectory = null;
         try {
             // File vcfFile = new File(this.getExternalFilesDir(null), "generated.vcf");
-            vdfdirectory = new File(
-                    getExternalStorageDirectory() + VCF_DIRECTORY);
+            //vdfdirectory = new File(
+            //        getExternalStorageDirectory() + VCF_DIRECTORY);
             //avec cela ca fonctionne pas Environment.getExternalStorageDirectory() /storage emulated O
             // have the object build the directory structure, if needed.
-            if (!vdfdirectory.exists()) {
-                vdfdirectory.mkdirs();
-            }
+            //if (!vdfdirectory.exists()) {
+            //    vdfdirectory.mkdirs();
+            //}
 
             //vcfFile = new File(vdfdirectory, "android_"+ Calendar.getInstance().getTimeInMillis() + ".vcf");
-            vcfFile = new File(vdfdirectory, VCF_NAME);
+            //vcfFile = new File(vdfdirectory, VCF_NAME);
 
-            File chemin = this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+            //File chemin = this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
 
-            File fichier = new File(chemin,VCF_NAME);
-            fichier.createNewFile();
+            //File vcard = new File(this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS),VCF_NAME);
+            File vcfdirectory = new File (getFilesDir()+"/vcard/");
+            Log.d("taq vcfdirectory",vcfdirectory.toString());
+            File vcard= new File(getFilesDir()+"/vcard/"+VCF_NAME);
+            Log.d("taq vcfdirectory",vcfdirectory.toString());
+            if (!vcfdirectory.exists()) {
+                vcfdirectory.mkdirs();
+                Log.d("taq vcfdirectory created",vcfdirectory.toString());
+
+            }
+            vcard.createNewFile();
             FileWriter fw = null;
-            fw = new FileWriter(fichier);
+            fw = new FileWriter(vcard);
             //fw.write("hello Clelia world!");
             fw.write("BEGIN:VCARD\r\n");
             fw.write("VERSION:3.0\r\n");
@@ -321,7 +385,7 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(MainActivity.this, "VCard created!", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Toast.makeText(MainActivity.this, "Exception VCard \r\n"
-                            + "directory: " + this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + "\r\n"
+                            + "directory: " + this.getFilesDir()+"/vcard/" + "\r\n"
                             + "name: " + VCF_NAME + "\r\n"
                     , Toast.LENGTH_LONG).show();
             e.printStackTrace();
@@ -331,10 +395,53 @@ public class MainActivity extends AppCompatActivity
 
 
     protected void sendEmail() {
-        Log.i("Send email", "");
+        Log.d("taq send email", "msg path");
         final SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = settings.edit();
 
+        //gestion des droits android developper
+
+        // https://developer.android.com/training/permissions/requesting#java
+        //Context thisActivity;
+/*
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted
+            Log.d("taq auth", "read external runtime storage not granted");
+        }
+
+        // Here, thisActivity = this is the current activity
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Permission is not granted
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                Log.d("taq auth", "read external storage Show an explanation to the user *asynchronously*");
+            } else {
+                // No explanation needed; request the permission
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+
+                // MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+                Log.d("taq auth", "read external storage No explanation needed; request the permission");
+            }
+        } else {
+            // Permission has already been granted
+            Log.d("taq auth", "read external storage Permission has already been granted");
+        }
+        
+*/
+        
+        
         //choix du destinataire TO
         String magasin = settings.getString("fix_name", "").toString();
         String fix_mail ="";
@@ -363,6 +470,9 @@ public class MainActivity extends AppCompatActivity
         }
 
         //creation de la vcard
+        Log.d("taq vcard", "call create vcard");
+        Log.d("taq ExternalFilesDir", this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString());
+        Log.d("taq uri.parse",Uri.parse( "file://"+ this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) +"/"+ VCF_NAME).toString());
         createVCard();
 
         String[] TO = {fix_mail};
@@ -381,20 +491,48 @@ public class MainActivity extends AppCompatActivity
 
 
         emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.setType("text/plain");
+        //emailIntent.setType("text/plain");
+        //emailIntent.setType("text/html");
+        //emailIntent.setType("text/plain");
+        emailIntent.setType("file/vcf");
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
 
         //joindre la Vcard
         //emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse( "file://"+filelocation));
         //emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://"+"Android/data/fr.bicyclopresto.bicyclopresto_bike_fix/files/Download"  +"/"+ "fichier.txt"));
-        emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///"+ this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) +"/"+ VCF_NAME));
-        //emailIntent.putExtra(Intent.EXTRA_STREAM, "/"+"storage/emulated/0/Android/data/fr.bicyclopresto.bicyclopresto_bike_fix/files/Download"  +"/"+ "fichier.txt");
+        //emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("content:///"+ this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) +"/"+ VCF_NAME));
+        Log.d("taq attachment", "before attachment");
+        Log.d("taq path_attachment", ""+ this.getFilesDir()+"/vcard/"+ VCF_NAME);
+        //Log.d("taq path_global",Environment.getExternalStorageDirectory().getAbsolutePath());
+        //emailIntent.setType("text/x-vcard");
+        //File vcard =   new File (this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) , VCF_NAME);
+        File vcard = new File (getFilesDir()+"/vcard/"+ VCF_NAME);
+        String authority ="fr.bicyclopresto.bicyclopresto_bike_fix.fileprovider";
+        Uri fileUri = FileProvider.getUriForFile(this, authority, vcard);
+        Log.d("taq fileUri path",fileUri.toString());
+        //Uri uri = Uri.parse(vcard.toString());
+        //String test_path = "/storage/emulated/0/vcard.vcf";
+        //test que la vcard exist et que l'on peut la lire
+        //if (!vcard.exists() || !vcard.canRead()) {
+        //    Log.d("taq vcard exist", "vcard n'existe pas ou n'est pas lisible");
+        //    return;
+       // }
+        Log.d("taq vcard exist", "vcard existe et est lisible");
+        //emailIntent.setDataAndType(Uri.parse("content:"+vcard), "text/x-vcard");
+        //gestion fine des droits d'acces à au fichier attachéIntent.FLAG_GRANT_READ_URI_PERMISSION
+        //emailIntent.grantUriPermission(packageName, uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        emailIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        emailIntent.putExtra(Intent.EXTRA_STREAM,fileUri);
+        //emailIntent.setType("text/vcf");
+        Log.d("taq vcard path: ", ""+ vcard);
+         Log.d("taq attachment", "after attachment");
+         //emailIntent.putExtra(Intent.EXTRA_STREAM, "/"+"storage/emulated/0/Android/data/fr.bicyclopresto.bicyclopresto_bike_fix/files/Download"  +"/"+ "fichier.txt");
         //Toast.makeText(MainActivity.this, "Attachment path: "+ this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() +"/"+"fichier.txt", Toast.LENGTH_LONG).show();
         //Toast.makeText(MainActivity.this, "Vcard Attachment path: " + this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) +"\n Vcard filename: "+ VCF_NAME, Toast.LENGTH_LONG).show();
 
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Demande de réparation de la part de "+settings.getString("profil_name", "").toString());
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Name: " +settings.getString("profil_name", "").toString()
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Name: " +settings.getString("profil_name", "").toString()
                 + "\n Mail: " +settings.getString("profil_mail", "").toString()
                 + "\n Phone: " +settings.getString("profil_phone", "").toString()
                 + "\n Mode Reparation: " +settings.getString("what_mode_repair", "").toString()
@@ -406,13 +544,16 @@ public class MainActivity extends AppCompatActivity
                 + "\n \n Courriel généré l'application Google Play Store: \n\n"
                 + builder
                 + " \n\n Diffusez Largement! \n \n"
+                + "file attached path: "+ fileUri +"\n \n"
                 );
 
         try {
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            startActivity(Intent.createChooser(emailIntent, "Choisissez votre programme de mail"));
+            Log.d("taq test",Environment.getExternalStoragePublicDirectory(DIRECTORY_DOWNLOADS).toString());
             finish();
-            Log.i("Finished sending email...", "");
+            Log.d("taq sending email", "Finished sending email...");
         } catch (android.content.ActivityNotFoundException ex) {
+            Log.d("taq found exception", "no email client installed");
             Toast.makeText(MainActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
     }
