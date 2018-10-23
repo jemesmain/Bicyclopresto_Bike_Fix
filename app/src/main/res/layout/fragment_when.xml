@@ -23,6 +23,7 @@
                 android:id="@+id/edit_when_titre"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/fragment_when" />
 
             <DatePicker
@@ -31,14 +32,14 @@
                 android:layout_height="match_parent"
                 android:layout_alignTop="@+id/edit_when_titre"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="18dp" />
+                android:layout_margin="25dp" />
 
             <TimePicker
                 android:id="@+id/edit_when_TimePicker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/edit_when_DatePicker"
-                android:layout_marginTop="18dp"
+                android:layout_margin="25dp"
                 android:timePickerMode="clock" />
         <FrameLayout
             android:layout_width="match_parent"
@@ -48,14 +49,15 @@
 
             <ImageButton
                 android:id="@+id/btn_when_save"
-                android:layout_marginTop="18dp"
                 android:layout_width="@dimen/button_margin"
                 android:layout_height="@dimen/button_margin"
-
                 android:layout_gravity="center_horizontal"
 
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_forward"/>
+                android:layout_marginTop="18dp"
+
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/roundedbutton"
+                android:src="@drawable/ic_menu_forward" />
 
 
             <!-- android:datePickerMode="spinner"

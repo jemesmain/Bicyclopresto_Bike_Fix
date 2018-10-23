@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 /**
@@ -33,6 +34,7 @@ public class Fragment_share extends Fragment {
         //DECLARATION DES VARIABLES
 
         ImageButton btnShare = (ImageButton) rootView.findViewById(R.id.btn_share);
+        TextView tVShare = (TextView) rootView.findViewById(R.id.textV_share_cart);
 
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +53,23 @@ public class Fragment_share extends Fragment {
 
             }
         });
+        tVShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+
+                //open drawer
+                //drawer.openDrawer(GravityCompat.START);
+                //@Override
+                //public void onClick(View v) {
+                ((MainActivity) getActivity()).shareApp(getContext());
+                //}
+                //Toast.makeText(getActivity().getApplicationContext(), "Merci d'appuyer sur le bouton en haut à gauche "
+                //                , Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
 
 
 

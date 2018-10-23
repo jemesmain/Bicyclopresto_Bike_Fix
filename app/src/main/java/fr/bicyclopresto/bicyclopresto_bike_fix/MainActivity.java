@@ -459,12 +459,52 @@ public class MainActivity extends AppCompatActivity
             case "Lyon : CycloDoc":
                 fix_mail="cyclodoc.contact@gmail.com";
                 break;
+            case "La Riviere : Raccoon Workshop":
+                fix_mail="brice.pellier@gmail.com";
+                break;
             case "Paris : HelpMyBike":
                 fix_mail="serviceclients@helpmybike.fr";
                 break;
             case "Toulouse : MecaniCycle":
                 fix_mail="mecanicycle1@gmail.com";
                 break;
+
+// reseau flycat
+            case "MOUGINS_06250 : MECAVELO": fix_mail="contact@mecavelo.fr"; break;
+            case "GIGNAC_LA_NERTHE_13180 : BATTI CYCLES": fix_mail="batticycles@gmail.com"; break;
+            case "DIJON_21000 : SUN CITY": fix_mail="dijon@veloelectrique-suncity.com"; break;
+            case "YFFINIAC_22120 : BRITWAYS-CAR YFFINIAC": fix_mail="magasinyffiniac@britways-car.fr"; break;
+            case "LANNION_22300 : BRITWAYS-CAR LANNION": fix_mail="magasinlannion@britways-car.fr"; break;
+            case "PERIGUEUX_24000 : REBOOT CYCLES": fix_mail="rebootcycles@gmail.com"; break;
+            case "ANGERVILLE_LA_CAMPAGNE_27930 : REPAR VDL Normandie": fix_mail="contact@reparvdl.fr"; break;
+            case "ST_POL_DE_LEON_29250 : MARCO VELO": fix_mail="marcovelo29@hotmail.fr"; break;
+            case "TOULOUSE_31300 : L'ECHAPPEE BELLE": fix_mail="contact@lechappeebelle.net"; break;
+            case "BORDEAUX_33000 : Bicyclopresto": fix_mail="contact@bicyclopresto.fr"; break;
+            case "MONTPELLIER_34000 : W Ville et Velo": fix_mail="info@double-v.org"; break;
+            case "MEZE_34140 : JPA Sport Moto": fix_mail="jpasportmoto@hotmail.com"; break;
+            case "SETE_34200 : FLYING CAT": fix_mail="contact@flying-cat.fr"; break;
+            case "GRENOBLE_38000 : Bicyclopresto": fix_mail="contact@bicyclopresto.fr"; break;
+            case "SAINT_NIZIER_DU_MOUCHEROTTE_38250 : GREEN E-BIKE COUNTRY": fix_mail="info@greenebikecountry.com"; break;
+            case "LILLE_59000 : Bicyclopresto": fix_mail="contact@bicyclopresto.fr"; break;
+            case "LEMPDES_63370 : ELECTRIC AUTO": fix_mail="j.l.auger@wanadoo.fr"; break;
+            case "SERRES_CASTET_64121 : ASSOCIATION MIKRO EKO": fix_mail="mikroeko@outlook.fr"; break;
+            case "SUNDHOUSE_67920 : SAWIKO": fix_mail="claire@sawiko.fr"; break;
+            case "STRASBOURG_68000 : Bicyclopresto": fix_mail="contact@bicyclopresto.fr"; break;
+            case "LYON_69000 : Bicyclopresto": fix_mail="contact@bicyclopresto.fr"; break;
+            case "SAINT_LEGER_SUR_D_HEUNE_71510 : NORD SUD CARAVANING": fix_mail="contact@nordsudcaravaning.com"; break;
+            case "MARIN_74200 : GREEN 2 GO": fix_mail="green2go.thonon@gmail.com"; break;
+            case "PERS_JUSSY_74930 : CYCLES JACQUEMOUD": fix_mail="serge.jacquemoud@gmail.com"; break;
+            case "PARIS_75000 : Bicyclopresto": fix_mail="contact@bicyclopresto.fr"; break;
+            case "DAMMARTIN_EN_GOELE_77230 : ALEXIS DUBOURG": fix_mail="alexisdubourg@free.fr"; break;
+            case "AVIGNON_84000 : AYME ROBERT et FILS": fix_mail="aymerobert@wanadoo.fr"; break;
+            case "BEDARRIDES_84370 : POWER ENERGIE BATTERIES": fix_mail="contact@equipbatteries.com"; break;
+            case "FONTAINE_LE_COMTE_86240 : VIENNE PASSION": fix_mail="mgviennepassion@gmail.com"; break;
+            case "ASNIERES_92600 : US WAY": fix_mail="laurent@usway-europe.com"; break;
+
+            case "Luxembourg_STEINFORT : SDS SA": fix_mail="sdssarl@pt.lu"; break;
+
+
+
             default:
                 fix_mail="jeaneric.mesmain@gmail.com";
         }

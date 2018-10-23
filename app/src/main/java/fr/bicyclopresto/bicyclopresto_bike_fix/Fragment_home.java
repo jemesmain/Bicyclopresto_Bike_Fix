@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -51,7 +52,16 @@ public class Fragment_home extends Fragment {
         ImageButton btnHomeShare = (ImageButton) rootView.findViewById(R.id.btn_home_share);
         ImageButton btnHomeJoin = (ImageButton) rootView.findViewById(R.id.btn_home_join);
 
-
+        TextView tvHomeMenu = (TextView) rootView.findViewById(R.id.textV_home_menu);
+        TextView tvHomeFinger = (TextView) rootView.findViewById(R.id.textV_home_fingerprint);
+        TextView tvHomeMotor = (TextView) rootView.findViewById(R.id.textV_home_motorcycle);
+        TextView tvHomeToday = (TextView) rootView.findViewById(R.id.textV_home_today);
+        TextView tvHomeLocation = (TextView) rootView.findViewById(R.id.textV_home_location);
+        TextView tvHomeManage = (TextView) rootView.findViewById(R.id.textV_home_manage);
+        TextView tvHomeReceipt = (TextView) rootView.findViewById(R.id.textV_home_receipt);
+        TextView tvHomeShare = (TextView) rootView.findViewById(R.id.textV_home_share);
+        TextView tvHomeJoin = (TextView) rootView.findViewById(R.id.textV_home_join);
+        //TextView tvHomeMoreVert = (TextView) rootView.findViewById(R.id.textV_home_more_vert);
 
         btnHomeMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +80,37 @@ public class Fragment_home extends Fragment {
 
             }
         });
+        tvHomeMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                //open drawer
+                //drawer.openDrawer(GravityCompat.START);
+                //@Override
+                //public void onClick(View v) {
+                ((MainActivity) getActivity()).ouvrirDrawer();
+                //}
+                //Toast.makeText(getActivity().getApplicationContext(), "Merci d'appuyer sur le bouton en haut à gauche "
+                //                , Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
 
         btnHomeFingerprint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Fragment_profil fragment_profil = new Fragment_profil();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_profil).commit();
+
+
+            }
+        });
+        tvHomeFinger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -96,8 +135,32 @@ public class Fragment_home extends Fragment {
 
             }
         });
+        tvHomeMotor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Fragment_what fragment_what = new Fragment_what();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_what).commit();
+
+
+            }
+        });
 
         btnHomeToday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Fragment_when fragment_when = new Fragment_when();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_when).commit();
+
+
+            }
+        });
+       tvHomeToday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -122,8 +185,32 @@ public class Fragment_home extends Fragment {
 
             }
         });
+        tvHomeLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Fragment_where fragment_where = new Fragment_where();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_where).commit();
+
+
+            }
+        });
 
         btnHomeManage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Fragment_fix fragment_fix = new Fragment_fix();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_fix).commit();
+
+
+            }
+        });
+        tvHomeManage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -148,6 +235,18 @@ public class Fragment_home extends Fragment {
 
             }
         });
+        tvHomeReceipt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Fragment_recap fragment_recap = new Fragment_recap();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_recap).commit();
+
+
+            }
+        });
 
         btnHomeShare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,8 +260,32 @@ public class Fragment_home extends Fragment {
 
             }
         });
+        tvHomeShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Fragment_share fragment_share = new Fragment_share();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_share).commit();
+
+
+            }
+        });
 
         btnHomeJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Fragment_join fragment_join = new Fragment_join();
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_join).commit();
+
+
+            }
+        });
+        tvHomeJoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

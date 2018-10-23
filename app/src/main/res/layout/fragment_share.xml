@@ -12,16 +12,17 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="horizontal">
+
         <ImageButton
             android:id="@+id/btn_share"
-            android:layout_marginTop="18dp"
             android:layout_width="@dimen/button_margin"
             android:layout_height="@dimen/button_margin"
             android:layout_below="@+id/edit_profil_phone"
-            android:background = "@drawable/roundedbutton"
-            android:src="@drawable/ic_menu_share"/>
+            android:layout_margin="10dp"
+            android:background="@drawable/roundedbutton"
+            android:src="@drawable/ic_menu_share" />
         <TextView
-            android:id="@+id/fragment_home_cart"
+            android:id="@+id/textV_share_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="15px"

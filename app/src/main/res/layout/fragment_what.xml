@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_what">
 
     <!-- TODO: Update blank fragment layout -->
@@ -9,32 +10,47 @@
         android:id="@+id/edit_what_titre"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:text="@string/fragment_what" />
 
     <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <RadioButton
             android:id="@+id/what_ambulant"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="24dp"
             android:checked="true"
-            android:text="a domicile / en entreprise"
+            android:clickable="true"
 
+            android:text="a domicile / en entreprise"
             android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/what_magasin"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:checked="false"
-            android:text="En magasin"
+            android:clickable="true"
 
+            android:text="En magasin"
+            android:textStyle="bold" />
+        <RadioButton
+            android:id="@+id/what_flycat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+            android:clickable="true"
+
+            android:text="Reseau partenaire FlyCat"
             android:textStyle="bold" />
 
 
@@ -46,24 +62,32 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="154dp"
+        android:background="@drawable/my_border"
+        android:clickable="false"
+        android:cursorVisible="true"
         android:fontFamily="sans-serif-condensed"
         android:hint="Decrivez votre besoin de réparation"
         android:inputType="textMultiLine"
-        android:maxLines="30"
+        android:maxLines="15"
         android:minLines="15"
         android:padding="10dp"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:selectAllOnFocus="true"
+        android:textAlignment="viewStart"
+        android:gravity="top|left"
+        android:textIsSelectable="true"
+        android:visibility="visible" />
+
     <ImageButton
         android:id="@+id/btn_what_save"
-        android:layout_marginTop="18dp"
         android:layout_width="@dimen/button_margin"
         android:layout_height="@dimen/button_margin"
-        android:layout_centerInParent="true"
         android:layout_below="@+id/edit_what_repair"
-        android:background = "@drawable/roundedbutton"
-        android:src="@drawable/ic_menu_forward"/>
-
+        android:layout_centerInParent="true"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/roundedbutton"
+        android:src="@drawable/ic_menu_forward" />
 
 
 </RelativeLayout>

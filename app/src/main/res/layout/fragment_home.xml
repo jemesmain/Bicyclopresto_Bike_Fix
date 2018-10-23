@@ -14,317 +14,330 @@
         android:scrollbars="vertical">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/fragment_home_vide"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="Instructions:"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_menu"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu"/>
-            <TextView
-                android:id="@+id/fragment_home_menu"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-
-                android:text="Menu: choix d'une des 6 étapes"/>
-        </LinearLayout>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_fingerprint"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_fingerprint"/>
-            <TextView
-                android:id="@+id/fragment_home_fingerprint"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="1 Coordonnées: édition de votre profil"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_motorcycle"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_motorcycle"/>
-            <TextView
-                android:id="@+id/fragment_home_motorcycle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="2 Réparation: descriptif de l'intervention attendue"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_today"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_today"/>
-            <TextView
-                android:id="@+id/fragment_home_today"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="3 Quand: créneau horaire souhaité"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_location"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_add_location"/>
-            <TextView
-                android:id="@+id/fragment_home_location"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="4 Lieu: localisation de votre réparation"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_manage"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_manage"/>
-            <TextView
-                android:id="@+id/fragment_home_manage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="5 Réparateur: choix de votre réparateur"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_receipt"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_receipt"/>
-            <TextView
-                android:id="@+id/fragment_home_cart"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-
-                android:text="6 Recapitulatif de la réparation: validation avec le bouton charriot en envoyant un mail"/>
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="Partage / nous rejoindre"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_share"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_share"/>
-            <TextView
-                android:id="@+id/fragment_home_share"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="Partager: partager l'application"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btn_home_join"
-                android:layout_marginTop="18dp"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/edit_profil_phone"
-                android:background = "@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_directions_bike"/>
-            <TextView
-                android:id="@+id/fragment_home_join"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text="Nous rejoindre: devenir réparateur"/>
-        </LinearLayout>
-
-
-
-
-    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:orientation="horizontal">
-    <ImageButton
-        android:id="@+id/btn_home_more_vert"
-        android:layout_marginTop="18dp"
-        android:layout_width="@dimen/button_margin"
-        android:layout_height="@dimen/button_margin"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/edit_profil_phone"
-        android:background = "@drawable/roundedbutton"
-        android:src="@drawable/ic_menu_more_vert"/>
-    <TextView
-        android:id="@+id/fragment_home_more_vert"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:ems="10"
-        android:layout_margin="15px"
-        android:gravity="center_vertical"
-        android:text="Instruction: revenir aux instructions"/>
-    </LinearLayout>
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fragment_home_vide"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="Instructions:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-            <TextView
+                <ImageButton
+                    android:id="@+id/btn_home_menu"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu" />
 
+                <TextView
+                    android:id="@+id/textV_home_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+
+                    android:gravity="center_vertical"
+                    android:text="Menu: choix d'une des 6 étapes" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home_fingerprint"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_fingerprint" />
+
+                <TextView
+                    android:id="@+id/textV_home_fingerprint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="1 Coordonnées: édition de votre profil" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home_motorcycle"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_motorcycle" />
+
+                <TextView
+                    android:id="@+id/textV_home_motorcycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="2 Réparation: descriptif de l'intervention attendue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home_today"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_today" />
+
+                <TextView
+                    android:id="@+id/textV_home_today"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="3 Quand: créneau horaire souhaité" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home_location"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_add_location" />
+
+                <TextView
+                    android:id="@+id/textV_home_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="4 Lieu: localisation de votre réparation" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home_manage"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_manage" />
+
+                <TextView
+                    android:id="@+id/textV_home_manage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="5 Réparateur: choix de votre réparateur" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home_receipt"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_receipt" />
+
+                <TextView
+                    android:id="@+id/textV_home_receipt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+
+                    android:gravity="center_vertical"
+                    android:text="6 Recapitulatif de la réparation: validation avec le bouton charriot en envoyant un mail" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="Partage / nous rejoindre"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home_share"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_share" />
+
+                <TextView
+                    android:id="@+id/textV_home_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="Partager: partager l'application" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home_join"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_directions_bike" />
+
+                <TextView
+                    android:id="@+id/textV_home_join"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="Nous rejoindre: devenir réparateur" />
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:layout_margin="15px"
-                android:gravity="center_vertical"
-                android:text=""/>
-        </LinearLayout>
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <ImageButton
+                    android:id="@+id/btn_home_more_vert"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_more_vert" />
+
+                <TextView
+                    android:id="@+id/textV_home_more_vert"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="Instruction: revenir aux instructions" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15px"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:text="" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </ScrollView>
 

@@ -37,21 +37,33 @@ public class Fragment_what extends Fragment {
         // return inflater.inflate(R.layout.fragment_profil, container, false);
 
         //DECLARATION DES VARIABLES
-        String mode_repair ="";
+        String code_repair ="";
 
         ImageButton btnSaveWhat = (ImageButton) rootView.findViewById(R.id.btn_what_save);
         final EditText edit_what = rootView.findViewById(R.id.edit_what_repair);
 
         final RadioButton ambulant = rootView.findViewById(R.id.what_ambulant);
         final RadioButton magasin = rootView.findViewById(R.id.what_magasin);
+        final RadioButton flycat = rootView.findViewById(R.id.what_flycat);
 
         final SharedPreferences settings = getActivity().getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = settings.edit();
 
-        //repositionnement eventuel du choix du mode repair
-        mode_repair = settings.getString("what_mode_repair","").toString();
-        if (mode_repair.equals("En magasin")){
-            magasin.setChecked(true);
+        //repositionnement eventuel du choix fonction du code repair
+        code_repair = settings.getString("what_code_repair","").toString();
+        switch (code_repair){
+            case "1":
+                ambulant.setChecked(true);
+                break;
+            case "2":
+                magasin.setChecked(true);
+                break;
+            case "3":
+                flycat.setChecked(true);
+                break;
+            default:
+                ambulant.setChecked(true);
+
         }
 
 
@@ -92,10 +104,8 @@ public class Fragment_what extends Fragment {
             @Override
             public void onClick(View view) {
                 editor.putString("what_mode_repair", "A domicile / En entreprise");
-                editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
-
-
-
+                editor.putString("what_code_repair","1");
+                        editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
 
                 Toast.makeText(getActivity().getApplicationContext(),
                         "Mode reparation: " +settings.getString("what_mode_repair","").toString()
@@ -110,10 +120,23 @@ public class Fragment_what extends Fragment {
             @Override
             public void onClick(View view) {
                 editor.putString("what_mode_repair", "En magasin");
+                editor.putString("what_code_repair","2");
                 editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
 
+                Toast.makeText(getActivity().getApplicationContext(),
+                        "Mode reparation: " +settings.getString("what_mode_repair","").toString()
+                        , Toast.LENGTH_SHORT).show();
+
+            }
 
 
+        });
+        flycat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editor.putString("what_mode_repair", "Reseau partenaire FlyCat");
+                editor.putString("what_code_repair","3");
+                editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
 
                 Toast.makeText(getActivity().getApplicationContext(),
                         "Mode reparation: " +settings.getString("what_mode_repair","").toString()

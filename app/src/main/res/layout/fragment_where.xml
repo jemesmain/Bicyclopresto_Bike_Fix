@@ -1,76 +1,90 @@
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
     tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_where">
 
-
-
-
-    <TextView
+    <ScrollView
+        android:id="@+id/where_ScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
-        android:text="@string/fragment_where" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="horizontal">
-
-
-    <fragment android:id="@+id/place_autocomplete_fragment"
-        android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="32dp"
-
-        xmlns:android="http://schemas.android.com/apk/res/android"
-    />
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-
-        android:orientation="horizontal">
-
-        <TextView
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:text="@string/fragment_where_save"
-            android:layout_marginTop="150dp"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/fragment_where_save"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_marginTop="175dp"
-            android:text="last saved adress"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
 
-    <ImageButton
-        android:id="@+id/btn_where_save"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/fragment_where" />
 
-        android:layout_width="@dimen/button_margin"
-        android:layout_height="@dimen/button_margin"
-        android:layout_gravity="bottom|center"
-        android:layout_below="@+id/edit_profil_phone"
-        android:background = "@drawable/roundedbutton"
-        android:src="@drawable/ic_menu_forward"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
 
-    </FrameLayout>
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
 
 
-   
+                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/place_autocomplete_fragment"
+                        android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-</FrameLayout>
+                        android:layout_margin="10dp" />
+
+                    <TextView
+                        android:id="@+id/fragment_where_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/place_autocomplete_fragment"
+                        android:layout_margin="10dp"
+                        android:text="@string/fragment_where_save"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/fragment_where_save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fragment_where_text"
+                        android:layout_margin="10dp"
+                        android:text="last saved adress"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/btn_where_save"
+
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_below="@+id/edit_profil_phone"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_forward" />
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
