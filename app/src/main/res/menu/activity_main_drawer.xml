@@ -2,45 +2,45 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <item android:title="Commander une réparation"></item>
+    <item android:title="@string/nav_view_title"></item>
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_profil"
             android:icon="@drawable/ic_menu_fingerprint"
-            android:title="1 Coordonnées" />
+            android:title="@string/nav_view_profil" />
         <item
             android:id="@+id/nav_what"
             android:icon="@drawable/ic_menu_motorcycle"
-            android:title="2 Réparation vélos / fauteuil" />
+            android:title="@string/nav_view_what" />
         <item
             android:id="@+id/nav_when"
             android:icon="@drawable/ic_menu_today"
-            android:title="3 Quand" />
+            android:title="@string/nav_view_when" />
         <item
             android:id="@+id/nav_where"
             android:icon="@drawable/ic_menu_add_location"
-            android:title="4 Lieu" />
+            android:title="@string/nav_view_where" />
         <item
             android:id="@+id/nav_fix"
             android:icon="@drawable/ic_menu_manage"
-            android:title="5 Réparateur" />
+            android:title="@string/nav_view_fix" />
         <item
             android:id="@+id/nav_recap"
             android:icon="@drawable/ic_menu_receipt"
-            android:title="6 Récapitulatif / Validation" />
+            android:title="@string/nav_view_recap" />
 
     </group>
 
-    <item android:title="Diffuser / Réparer?">
+    <item android:title="@string/nav_view_group">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Partager" />
+                android:title="@string/nav_view_share" />
             <item
                 android:id="@+id/nav_join"
                 android:icon="@drawable/ic_menu_directions_bike"
-                android:title="Bénéficier de l'appli" />
+                android:title="@string/nav_view_join" />
         </menu>
     </item>
 

@@ -14,7 +14,7 @@
         android:scrollbars="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical">
 
@@ -26,7 +26,7 @@
             android:layout_marginTop="0dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:text="  Coordonnées:"
+            android:text="@string/recap_coord"
             android:textStyle="bold" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="3dp"
-            android:text="  name" />
+            android:text="@string/recap_name" />
 
         <TextView
             android:id="@+id/fragment_recap_mail"
@@ -49,7 +49,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="3dp"
-            android:text="  mail" />
+            android:text="@string/recap_mail" />
 
         <TextView
             android:id="@+id/fragment_recap_phone"
@@ -60,7 +60,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="3dp"
-            android:text="  phone" />
+            android:text="@string/recap_phone" />
 
         <TextView
             android:id="@+id/fragment_recap_repairT"
@@ -71,7 +71,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:text="  Réparations:"
+            android:text="@string/recap_repair"
 
             android:textStyle="bold" />
 
@@ -84,7 +84,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="3dp"
-            android:text="  mode reparation" />
+            android:text="@string/recap_mode_repair" />
 
         <TextView
             android:id="@+id/fragment_recap_repair"
@@ -95,7 +95,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="3dp"
-            android:text="  quelle reparation" />
+            android:text="@string/recap_what_repair" />
 
         <TextView
             android:id="@+id/fragment_recap_RDV"
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_recap_repair"
             android:layout_margin="10dp"
-            android:text="  RDV souhaité le:"
+            android:text="@string/recap_when"
             android:textStyle="bold" />
 
         <TextView
@@ -115,7 +115,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="3dp"
-            android:text="  RDV date" />
+            android:text="@string/recap_date" />
 
 
         <TextView
@@ -127,7 +127,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="3dp"
-            android:text="  Adresse:"
+            android:text="@string/recap_adress"
             android:textStyle="bold" />
 
         <TextView
@@ -139,7 +139,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="3dp"
-            android:text="  Adresse" />
+            android:text="@string/recap_where" />
 
         <TextView
             android:id="@+id/fragment_recap_magasin"
@@ -151,7 +151,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="3dp"
-            android:text="  Reparateur / Magasin:"
+            android:text="@string/recap_shop"
             android:textStyle="bold" />
 
         <TextView
@@ -164,7 +164,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="3dp"
-            android:text="  Reparateur / magasin"
+            android:text="@string/recap_shop_repair"
             android:textStyle="bold" />
 
         <TextView
@@ -178,10 +178,7 @@
             android:layout_marginBottom="74dp"
             android:background="@drawable/my_border"
             android:padding="2dp"
-            android:text="\n Le réparateur prendra contact avec vous \n\n
-Veuillez valider en appuyant sur le charriot \n\n
-Puis sur envoyer Ou effectuez des modifications \n\n
-L'application envoie un email qui contient votre demande et un fichier vcard qui contient vos coordonnées.\n" />
+            android:text="@string/recap_instruction" />
     </RelativeLayout>
     </ScrollView>
 </FrameLayout>

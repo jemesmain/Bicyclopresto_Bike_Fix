@@ -1,6 +1,7 @@
 package fr.bicyclopresto.bicyclopresto_bike_fix;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -153,9 +154,10 @@ public class Fragment_home extends Fragment {
             public void onClick(View view) {
 
 
-                Fragment_when fragment_when = new Fragment_when();
-                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragment, fragment_when).commit();
+
+                    Fragment_when fragment_when = new Fragment_when();
+                    android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.fragment, fragment_when).commit();
 
 
             }

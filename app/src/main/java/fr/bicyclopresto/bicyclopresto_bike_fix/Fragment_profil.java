@@ -72,7 +72,7 @@ public class Fragment_profil extends Fragment {
                 editor.putString("profil_name",profil_name.getText().toString());
                 editor.putString("profil_mail",profil_mail.getText().toString());
                 editor.putString("profil_phone",profil_phone.getText().toString());
-                editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
+                editor.apply(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(), "Name: " +profil_name.getText().toString()
                         + "\n Mail: " +profil_mail.getText().toString()
                         + "\n Phone: " +profil_phone.getText().toString()

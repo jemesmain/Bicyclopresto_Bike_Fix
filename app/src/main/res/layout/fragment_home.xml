@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10px"
+    android:padding="4dp"
     tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_home">
 
     <!-- TODO: Update blank fragment layout -->
@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:orientation="vertical">
 
@@ -30,10 +30,10 @@
                     android:id="@+id/fragment_home_vide"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="Instructions:"
+                    android:text="@string/home_instruction"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -50,6 +50,7 @@
                     android:id="@+id/btn_home_menu"
                     android:layout_width="@dimen/button_margin"
                     android:layout_height="@dimen/button_margin"
+
                     android:layout_below="@+id/edit_profil_phone"
                     android:layout_margin="10dp"
                     android:background="@drawable/roundedbutton"
@@ -59,10 +60,10 @@
                     android:id="@+id/textV_home_menu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
 
                     android:gravity="center_vertical"
-                    android:text="Menu: choix d'une des 6 étapes" />
+                    android:text="@string/home_menu" />
             </LinearLayout>
 
 
@@ -86,10 +87,10 @@
                     android:id="@+id/textV_home_fingerprint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="1 Coordonnées: édition de votre profil" />
+                    android:text="@string/home_profil" />
             </LinearLayout>
 
             <LinearLayout
@@ -112,10 +113,10 @@
                     android:id="@+id/textV_home_motorcycle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="2 Réparation: descriptif de l'intervention attendue" />
+                    android:text="@string/home_motor" />
             </LinearLayout>
 
             <LinearLayout
@@ -138,10 +139,10 @@
                     android:id="@+id/textV_home_today"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="3 Quand: créneau horaire souhaité" />
+                    android:text="@string/home_when" />
             </LinearLayout>
 
             <LinearLayout
@@ -164,10 +165,10 @@
                     android:id="@+id/textV_home_location"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="4 Lieu: localisation de votre réparation" />
+                    android:text="@string/home_local" />
             </LinearLayout>
 
             <LinearLayout
@@ -190,10 +191,10 @@
                     android:id="@+id/textV_home_manage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="5 Réparateur: choix de votre réparateur" />
+                    android:text="@string/home_manage" />
             </LinearLayout>
 
             <LinearLayout
@@ -215,10 +216,10 @@
                     android:id="@+id/textV_home_receipt"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
 
                     android:gravity="center_vertical"
-                    android:text="6 Recapitulatif de la réparation: validation avec le bouton charriot en envoyant un mail" />
+                    android:text="@string/home_recap" />
             </LinearLayout>
 
 
@@ -229,13 +230,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-
+                    android:id="@+id/textV_home_share_us"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="Partage / nous rejoindre"
+                    android:text="@string/home_share_us"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -261,10 +262,10 @@
                     android:id="@+id/textV_home_share"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="Partager: partager l'application" />
+                    android:text="@string/home_share" />
             </LinearLayout>
 
             <LinearLayout
@@ -287,10 +288,10 @@
                     android:id="@+id/textV_home_join"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="Nous rejoindre: devenir réparateur" />
+                    android:text="@string/home_join" />
             </LinearLayout>
 
 
@@ -314,10 +315,10 @@
                     android:id="@+id/textV_home_more_vert"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
-                    android:text="Instruction: revenir aux instructions" />
+                    android:text="@string/home_more_vert" />
             </LinearLayout>
 
 
@@ -331,7 +332,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15px"
+                    android:layout_margin="6dp"
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:text="" />

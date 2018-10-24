@@ -13,8 +13,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+//import android.support.v4.app.ActivityCompat;
+//import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -30,15 +30,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
+//import android.widget.Button;
+//import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
-import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+//import com.google.android.gms.common.api.GoogleApiClient;
+//import com.google.android.gms.common.api.Status;
+//import com.google.android.gms.location.places.Place;
+//import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+//import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //private static final Object MainActivity = ;
-    private GoogleApiClient mGoogleApiClient;
+    //private GoogleApiClient mGoogleApiClient;
 
     // pour gerer les droits
-    private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
+    //private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
 
 
     // pour createVCard
@@ -170,8 +170,8 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         //SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", 0);
-        SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
-        final EditText profil_name = findViewById(R.id.edit_profil_nom);
+        //SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
+        //final EditText profil_name = findViewById(R.id.edit_profil_nom);
         // default fragment = fragment home
 
         if (id == R.id.nav_profil) {
@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity
 //essai en external storage
         //acces au settings
         final SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = settings.edit();
+       // final SharedPreferences.Editor editor = settings.edit();
 
         //File vdfdirectory = null;
         try {
@@ -337,7 +337,7 @@ public class MainActivity extends AppCompatActivity
             Log.d("taq vcfdirectory",vcfdirectory.toString());
             if (!vcfdirectory.exists()) {
                 vcfdirectory.mkdirs();
-                Log.d("taq vcfdirectory created",vcfdirectory.toString());
+                Log.d("taq vcfdirectory create",vcfdirectory.toString());
 
             }
             vcard.createNewFile();
@@ -397,7 +397,7 @@ public class MainActivity extends AppCompatActivity
     protected void sendEmail() {
         Log.d("taq send email", "msg path");
         final SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = settings.edit();
+        //final SharedPreferences.Editor editor = settings.edit();
 
         //gestion des droits android developper
 
@@ -605,8 +605,8 @@ public class MainActivity extends AppCompatActivity
         final SharedPreferences.Editor editor = settings.edit();
 
         //choix du destinataire TO
-        String magasin = settings.getString("fix_name", "").toString();
-        String fix_mail ="";
+       // String magasin = settings.getString("fix_name", "").toString();
+       // String fix_mail ="";
 
 
 
@@ -635,7 +635,7 @@ public class MainActivity extends AppCompatActivity
         try {
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
             finish();
-            Log.i("Finished sending email...", "");
+            Log.i("Finished sending email", "");
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(MainActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }

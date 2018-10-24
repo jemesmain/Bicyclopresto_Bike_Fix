@@ -27,7 +27,7 @@
             android:checked="true"
             android:clickable="true"
 
-            android:text="a domicile / en entreprise"
+            android:text="@string/what_itinerant"
             android:textStyle="bold" />
 
         <RadioButton
@@ -39,7 +39,7 @@
             android:checked="false"
             android:clickable="true"
 
-            android:text="En magasin"
+            android:text="@string/what_shop"
             android:textStyle="bold" />
         <RadioButton
             android:id="@+id/what_flycat"
@@ -50,7 +50,7 @@
             android:checked="false"
             android:clickable="true"
 
-            android:text="Reseau partenaire FlyCat"
+            android:text="@string/what_flycat_web"
             android:textStyle="bold" />
 
 
@@ -67,14 +67,14 @@
         android:clickable="false"
         android:cursorVisible="true"
         android:fontFamily="sans-serif-condensed"
-        android:hint="Decrivez votre besoin de réparation"
+        android:hint="@string/what_repair_need"
         android:inputType="textMultiLine"
         android:maxLines="15"
         android:minLines="15"
         android:padding="10dp"
         android:scrollbars="vertical"
         android:selectAllOnFocus="true"
-        android:textAlignment="viewStart"
+
         android:gravity="top|left"
         android:textIsSelectable="true"
         android:visibility="visible" />

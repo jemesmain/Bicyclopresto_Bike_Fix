@@ -61,7 +61,7 @@ public class Fragment_recap extends Fragment {
         final TextView recap_fix = rootView.findViewById(R.id.fragment_recap_fix);
 
         final SharedPreferences settings = getActivity().getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = settings.edit();
+        //final SharedPreferences.Editor editor = settings.edit();
 
         // récupération des informations utilisateurs
 

@@ -3,6 +3,7 @@ package fr.bicyclopresto.bicyclopresto_bike_fix;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -86,15 +87,18 @@ public class Fragment_what extends Fragment {
                 //editor.putString("what_mode_repair",mode_repair);
                 editor.putString("what_repair",edit_what.getText().toString());
 
-                editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
+                editor.apply(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(),
                         "Mode reparation: " +settings.getString("what_mode_repair","").toString()
                         +"\n Reparation: " +edit_what.getText().toString()
                         , Toast.LENGTH_SHORT).show();
 
+
                 Fragment_when fragment_when = new Fragment_when();
                 android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.fragment, fragment_when).commit();
+
+
 
 
             }

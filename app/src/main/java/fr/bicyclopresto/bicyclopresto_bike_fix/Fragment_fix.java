@@ -51,7 +51,7 @@ public class Fragment_fix extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_fix, container, false);
         //DECLARATION DES VARIABLES
         String code_repair = "0";
-        String mode_repair ="";
+        //String mode_repair ="";
 
         ImageButton btnSaveFix = (ImageButton) rootView.findViewById(R.id.btn_fix_save);
         final TextView text_fix = rootView.findViewById(R.id.fragment_fix_save);
@@ -60,14 +60,14 @@ public class Fragment_fix extends Fragment {
 
         // récupération des informations utilisateurs
 
-        text_fix.setText(settings.getString("fix_name", "").toString());
+        text_fix.setText(settings.getString("fix_name", ""));
 
         //Toast.makeText(getActivity().getApplicationContext(), "Magasin: " +settings.getString("fix_name", "").toString()
 
         //       , Toast.LENGTH_LONG).show();
 
         // test du code_code repair -> fragment what choix radio button
-        code_repair = settings.getString("what_code_repair","").toString();
+        code_repair = settings.getString("what_code_repair","");
         //Toast.makeText(getActivity().getApplicationContext(), "mode repair / ambulant: " + mode_repair +" / "+ ambulant
 
         //        , Toast.LENGTH_SHORT).show();
@@ -128,7 +128,7 @@ public class Fragment_fix extends Fragment {
                 //SharedPreferences settings = getActivity().getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
                 //SharedPreferences.Editor editor = settings.edit();
                 editor.putString("fix_name",text_fix.getText().toString());
-                editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
+                editor.apply(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(), "Magasin: " +text_fix.getText().toString()
 
                         , Toast.LENGTH_SHORT).show();

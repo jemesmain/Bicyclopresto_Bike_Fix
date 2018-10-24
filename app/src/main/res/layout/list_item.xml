@@ -5,7 +5,7 @@
 
     <TextView
         android:id="@+id/lblListItem"
-        android:textSize="16dip"
+        android:textSize="16sp"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"

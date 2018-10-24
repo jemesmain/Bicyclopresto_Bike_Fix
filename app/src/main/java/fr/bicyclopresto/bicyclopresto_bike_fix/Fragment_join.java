@@ -62,7 +62,7 @@ public class Fragment_join extends Fragment {
                 editor.putString("join_type",join_type.getText().toString());
                 editor.putString("join_qualif",join_qualif.getText().toString());
                 editor.putString("join_phone",join_phone.getText().toString());
-                editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
+                editor.apply(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(), "Ville: " +join_town.getText().toString()
                                 + "\n Magasin: " +join_mag.getText().toString()
                                 + "\n Type réparation: " +join_type.getText().toString()

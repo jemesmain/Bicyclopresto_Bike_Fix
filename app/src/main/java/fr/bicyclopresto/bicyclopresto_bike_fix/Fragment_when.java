@@ -4,6 +4,7 @@ package fr.bicyclopresto.bicyclopresto_bike_fix;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -35,9 +36,26 @@ public class Fragment_when extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_when, container, false);
-
         // rootview permet d'accéder aux différents éléments du fragment
         View rootView = inflater.inflate(R.layout.fragment_when, container, false);
+
+        // assure la retrocompatibilite en dessous de la version 23 car les datePicker et TimPicker ne sont pas compatible
+        if (Build.VERSION.SDK_INT<23){
+            Fragment_when_alt fragment_when_alt = new Fragment_when_alt();
+            android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment, fragment_when_alt).commit();
+            return rootView;
+
+
+
+        } else {
+            //Fragment_when fragment_when = new Fragment_when();
+            //android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+            //fragmentManager.beginTransaction().replace(R.id.fragment, fragment_when).commit();
+
+
+
+
 
         // return inflater.inflate(R.layout.fragment_profil, container, false);
 
@@ -86,7 +104,7 @@ public class Fragment_when extends Fragment {
                 //sauvegarde dans les préférences
                 editor.putString("when_date",formatedDate);
                 editor.putString("when_time",time);
-                editor.commit(); // indispensable pour valider les changement dans les shared pref ;-)
+                editor.apply(); // indispensable pour valider les changement dans les shared pref ;-)
                 Toast.makeText(getActivity().getApplicationContext(), "RDV souhaité le: " +formatedDate
                         +" " + time
 
@@ -109,6 +127,7 @@ public class Fragment_when extends Fragment {
 
 
         return rootView;
+        }
     }
 
 }

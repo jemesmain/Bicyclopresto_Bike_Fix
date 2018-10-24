@@ -25,10 +25,10 @@
             android:id="@+id/textV_share_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15px"
+            android:layout_margin="6dp"
             android:gravity="center_vertical"
 
-            android:text="Partager l'application BikeMeeting"/>
+            android:text="@string/share_share"/>
     </LinearLayout>
 
 </FrameLayout>

@@ -14,7 +14,7 @@
         android:scrollbars="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:orientation="vertical">
 
@@ -57,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/fragment_where_text"
                         android:layout_margin="10dp"
-                        android:text="last saved adress"
+                        android:text="@string/where_save"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 

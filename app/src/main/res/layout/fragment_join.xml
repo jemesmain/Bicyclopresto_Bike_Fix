@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_join">
 
     <!-- TODO: Update blank fragment layout -->
@@ -20,7 +20,7 @@
         android:id="@+id/edit_join_town"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_profil_titre"
+        android:layout_below="@+id/edit_join_titre"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"

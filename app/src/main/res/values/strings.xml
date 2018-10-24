@@ -14,6 +14,9 @@
     <string name="fragment_what">Decrivez votre besoin de réparation</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_when">Donnez nous votre souhait de créneau horaire</string>
+    <string name="fragment_when_alt">Donnez nous votre souhait de créneau horaire</string>
+    <string name="when_alt_date_hint">date au format jj-mm-aaaa</string>
+    <string name="when_alt_time_hint">heure au format hh:mm</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_where">Indiquez le lieu de votre réparation (Ville Adresse)</string>
     <string name="fragment_where_save">Votre choix:</string>
@@ -46,5 +49,50 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_view_title">Commander une réparation</string>
+    <string name="nav_view_profil">1 Coordonnées</string>
+    <string name="nav_view_what">2 Réparation vélos / fauteuil</string>
+    <string name="nav_view_when">3 Quand</string>
+    <string name="nav_view_where">4 Lieu</string>
+    <string name="nav_view_fix">5 Réparateur</string>
+    <string name="nav_view_recap">6 Récapitulatif / Validation</string>
+    <string name="nav_view_group">Diffuser / Réparer?</string>
+    <string name="nav_view_join">Bénéficier de l\'appli</string>
+    <string name="nav_view_share">Partager</string>
+    <string name="text_fix_save">last saved fixer</string>
+    <string name="home_instruction">Instructions:</string>
+    <string name="home_menu">Menu: choix d\'une des 6 étapes</string>
+    <string name="home_profil">1 Coordonnées: édition de votre profil</string>
+    <string name="home_motor">2 Réparation: descriptif de l\'intervention attendue</string>
+    <string name="home_when">3 Quand: créneau horaire souhaité</string>
+    <string name="home_local">4 Lieu: localisation de votre réparation</string>
+    <string name="home_manage">5 Réparateur: choix de votre réparateur</string>
+    <string name="home_recap">6 Recapitulatif de la réparation: validation avec le bouton charriot en envoyant un mail</string>
+    <string name="home_share_us">Partage / nous rejoindre</string>
+    <string name="home_share">Partager: partager l\'application</string>
+    <string name="home_join">Nous rejoindre: devenir réparateur</string>
+    <string name="home_more_vert">Instruction: revenir aux instructions</string>
+    <string name="recap_coord">Coordonnées:</string>
+    <string name="recap_name">name</string>
+    <string name="recap_mail">mail</string>
+    <string name="recap_phone">phone</string>
+    <string name="recap_repair">Réparations:</string>
+    <string name="recap_mode_repair">mode reparation</string>
+    <string name="recap_what_repair">quelle reparation</string>
+    <string name="recap_when">RDV souhaité le:</string>
+    <string name="recap_date">RDV date</string>
+    <string name="recap_adress">Adresse:</string>
+    <string name="recap_where">Adresse</string>
+    <string name="recap_shop">Reparateur / Magasin:</string>
+    <string name="recap_shop_repair">Reparateur / magasin</string>
+    <string name="recap_instruction">Le réparateur prendra contact avec vous    Veuillez valider en appuyant sur le charriot    Puis sur envoyer Ou effectuez des modifications    L\'application envoie un email qui contient votre demande et un fichier vcard qui contient vos coordonnées.</string>
+    <string name="share_share">Partager l\'application BikeMeeting</string>
+    <string name="what_itinerant">a domicile / en entreprise</string>
+    <string name="what_shop">En magasin</string>
+    <string name="what_flycat_web">Reseau partenaire FlyCat</string>
+    <string name="what_repair_need">Decrivez votre besoin de réparation</string>
+    <string name="where_save">last saved adress</string>
+    <string name="nav_header_title">BikeMeeting By Bicyclopresto</string>
+    <string name="nav_header_mail">contact@bicyclopresto.fr</string>
 
 </resources>
