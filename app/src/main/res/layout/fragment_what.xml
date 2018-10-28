@@ -6,6 +6,18 @@
     tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_what">
 
     <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:id="@+id/what_ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
     <TextView
         android:id="@+id/edit_what_titre"
         android:layout_width="match_parent"
@@ -79,15 +91,18 @@
         android:textIsSelectable="true"
         android:visibility="visible" />
 
-    <ImageButton
-        android:id="@+id/btn_what_save"
-        android:layout_width="@dimen/button_margin"
-        android:layout_height="@dimen/button_margin"
-        android:layout_below="@+id/edit_what_repair"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/roundedbutton"
-        android:src="@drawable/ic_menu_forward" />
+            <ImageButton
+                android:id="@+id/btn_what_save"
+                android:layout_width="@dimen/button_margin"
+                android:layout_height="@dimen/button_margin"
+                android:layout_below="@+id/edit_what_repair"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="28dp"
+                android:background="@drawable/roundedbutton"
+                android:src="@drawable/ic_menu_forward" />
+        </RelativeLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     android:orientation="vertical"
     tools:context="fr.bicyclopresto.bicyclopresto_bike_fix.Fragment_when">
 
@@ -16,7 +17,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -41,29 +41,29 @@
                 android:layout_alignTop="@+id/edit_when_DatePicker"
                 android:layout_margin="25dp"
                 android:timePickerMode="clock" />
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/btn_when_save"
-                android:layout_width="@dimen/button_margin"
-                android:layout_height="@dimen/button_margin"
-                android:layout_gravity="center_horizontal"
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                android:layout_marginTop="18dp"
+                <ImageButton
+                    android:id="@+id/btn_when_save"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+                    android:layout_gravity="center_horizontal"
 
-                android:layout_marginBottom="18dp"
-                android:background="@drawable/roundedbutton"
-                android:src="@drawable/ic_menu_forward" />
+                    android:layout_marginTop="18dp"
+
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_menu_forward" />
 
 
-            <!-- android:datePickerMode="spinner"
+                <!-- android:datePickerMode="spinner"
         android:layout_width="@dimen/button_margin"
             android:layout_height="@dimen/button_margin"-->
-        </FrameLayout>
+            </FrameLayout>
         </LinearLayout>
 
     </ScrollView>

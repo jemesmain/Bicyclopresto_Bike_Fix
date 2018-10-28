@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,173 +12,195 @@
         android:layout_height="match_parent"
         android:fillViewport="true"
         android:scrollbars="vertical">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/fragment_recap_coord"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/recap_coord"
-            android:textStyle="bold" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/fragment_recap_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_coord"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_name" />
+            <TextView
+                android:id="@+id/fragment_recap_coord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/recap_coord"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/fragment_recap_mail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_name"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_mail" />
+            <TextView
+                android:id="@+id/fragment_recap_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_coord"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_name" />
 
-        <TextView
-            android:id="@+id/fragment_recap_phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_mail"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_phone" />
+            <TextView
+                android:id="@+id/fragment_recap_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_name"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_mail" />
 
-        <TextView
-            android:id="@+id/fragment_recap_repairT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_phone"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/recap_repair"
+            <TextView
+                android:id="@+id/fragment_recap_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_mail"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_phone" />
 
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/fragment_recap_repairT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_phone"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/recap_repair"
 
-        <TextView
-            android:id="@+id/fragment_recap_ambulant"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_repairT"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_mode_repair" />
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/fragment_recap_repair"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_ambulant"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_what_repair" />
+            <TextView
+                android:id="@+id/fragment_recap_ambulant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_repairT"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_mode_repair" />
 
-        <TextView
-            android:id="@+id/fragment_recap_RDV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_repair"
-            android:layout_margin="10dp"
-            android:text="@string/recap_when"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/fragment_recap_repair"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_ambulant"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_what_repair" />
 
-        <TextView
-            android:id="@+id/fragment_recap_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_RDV"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_date" />
+            <TextView
+                android:id="@+id/fragment_recap_RDV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_repair"
+                android:layout_margin="10dp"
+                android:text="@string/recap_when"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fragment_recap_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_RDV"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_date" />
 
 
-        <TextView
-            android:id="@+id/fragment_recap_adresse"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_date"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_adress"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/fragment_recap_adresse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_date"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_adress"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/fragment_recap_where"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_adresse"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_where" />
+            <TextView
+                android:id="@+id/fragment_recap_where"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_adresse"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_where" />
 
-        <TextView
-            android:id="@+id/fragment_recap_magasin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_where"
+            <TextView
+                android:id="@+id/fragment_recap_magasin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_where"
 
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_shop"
-            android:textStyle="bold" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_shop"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/fragment_recap_fix"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_magasin"
+            <TextView
+                android:id="@+id/fragment_recap_fix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_magasin"
 
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/recap_shop_repair"
-            android:textStyle="bold" />
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/recap_shop_repair"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/fragment_recap_instruction"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_recap_fix"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="74dp"
-            android:background="@drawable/my_border"
-            android:padding="2dp"
-            android:text="@string/recap_instruction" />
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/fragment_recap_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_recap_fix"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/my_border"
+                android:padding="5dp"
+                android:text="@string/recap_instruction" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fragment_recap_instruction"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_recap_buy"
+                    android:layout_width="@dimen/button_margin"
+                    android:layout_height="@dimen/button_margin"
+
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_margin="18dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/roundedbutton"
+                    android:src="@drawable/ic_dialog_cart" />
+            </FrameLayout>
+
+        </RelativeLayout>
     </ScrollView>
-</FrameLayout>
+</RelativeLayout>

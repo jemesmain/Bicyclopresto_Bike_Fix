@@ -85,7 +85,7 @@
     <string name="recap_where">Adresse</string>
     <string name="recap_shop">Reparateur / Magasin:</string>
     <string name="recap_shop_repair">Reparateur / magasin</string>
-    <string name="recap_instruction">Le réparateur prendra contact avec vous    Veuillez valider en appuyant sur le charriot    Puis sur envoyer Ou effectuez des modifications    L\'application envoie un email qui contient votre demande et un fichier vcard qui contient vos coordonnées.</string>
+    <string name="recap_instruction">Le réparateur prendra contact avec vous.\nVeuillez valider en appuyant sur le charriot.\nPuis sur envoyer Ou effectuez des modifications.\nL\'application envoie un email qui contient votre demande et un fichier vcard qui contient vos coordonnées.</string>
     <string name="share_share">Partager l\'application BikeMeeting</string>
     <string name="what_itinerant">a domicile / en entreprise</string>
     <string name="what_shop">En magasin</string>

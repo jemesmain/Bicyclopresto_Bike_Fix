@@ -60,6 +60,8 @@ public class Fragment_recap extends Fragment {
 
         final TextView recap_fix = rootView.findViewById(R.id.fragment_recap_fix);
 
+        ImageButton btnBuyRecap = (ImageButton) rootView.findViewById(R.id.btn_recap_buy);
+
         final SharedPreferences settings = getActivity().getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
         //final SharedPreferences.Editor editor = settings.edit();
 
@@ -88,7 +90,19 @@ public class Fragment_recap extends Fragment {
         //        , Toast.LENGTH_LONG).show();
         //profil_name.setText("toto");
 
+        btnBuyRecap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //SharedPreferences settings = getActivity().getSharedPreferences("Bicyclopresto_bike_fix_pref", 0);
+                //SharedPreferences settings = getActivity().getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
+                //SharedPreferences.Editor editor = settings.edit();
+                Toast.makeText(getActivity(), "Start sending email" , Toast.LENGTH_SHORT ).show();
+                //sendEmail();
+                ((MainActivity) getActivity()).sendEmail();
 
+
+            }
+        });
         return rootView;
     }
 

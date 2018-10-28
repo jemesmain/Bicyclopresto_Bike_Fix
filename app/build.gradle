@@ -7,8 +7,8 @@ android {
         applicationId "fr.bicyclopresto.bicyclopresto_bike_fix"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 19
-        versionName "1.17"
+        versionCode 20
+        versionName "1.18"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
