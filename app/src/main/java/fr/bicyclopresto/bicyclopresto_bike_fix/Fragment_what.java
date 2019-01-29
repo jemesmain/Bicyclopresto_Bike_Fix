@@ -3,7 +3,7 @@ package fr.bicyclopresto.bicyclopresto_bike_fix;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -41,6 +42,8 @@ public class Fragment_what extends Fragment {
         String code_repair ="";
 
         ImageButton btnSaveWhat = (ImageButton) rootView.findViewById(R.id.btn_what_save);
+        ImageButton btnPictWhat = (ImageButton) rootView.findViewById(R.id.btn_what_pict);
+        final ImageView pictWhat = (ImageView) rootView.findViewById(R.id.image_what);
         final EditText edit_what = rootView.findViewById(R.id.edit_what_repair);
 
         final RadioButton ambulant = rootView.findViewById(R.id.what_ambulant);
@@ -73,9 +76,37 @@ public class Fragment_what extends Fragment {
 
         edit_what.setText(settings.getString("what_repair", "").toString());
 
+        // recuperation de la photo
+        if (settings.getString("what_pict","" )!="") {
+            pictWhat.setImageURI(Uri.parse(settings.getString("what_pict", "")));
+        }
         //Toast.makeText(getActivity().getApplicationContext(), "Reparation: " +settings.getString("what_repair", "").toString()
 
          //       , Toast.LENGTH_LONG).show();
+
+
+        btnPictWhat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(getActivity(), "Start capturing Picture", Toast.LENGTH_SHORT).show();
+
+                ((MainActivity) getActivity()).openCameraIntent();
+                //acces au settings
+                //final SharedPreferences settings = getSharedPreferences("Bicyclopresto_bike_fix_pref", Context.MODE_PRIVATE);
+                //editor.putString("what_mode_repair",mode_repair);
+                //editor.putString("what_pict",edit_what.getText().toString());
+                //final SharedPreferences.Editor editor = settings.edit();
+                //imageView.setImageURI(Uri.parse(imageFilePath));
+
+                // on affiche la photo
+                //if (settings.getString("what_pict","" )!="") {
+                //    pictWhat.setImageURI(Uri.parse(settings.getString("what_pict", "")));
+                //}
+
+
+            }
+
+        });
 
         btnSaveWhat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +134,8 @@ public class Fragment_what extends Fragment {
 
             }
         });
+
+
 
         ambulant.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,4 +188,14 @@ public class Fragment_what extends Fragment {
         return rootView;
     }
 
+
+
+
+
+
+
+
+
+
+    
 }
